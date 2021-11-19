@@ -18,7 +18,6 @@ export default function Index({ allPosts }) {
         </Head>
         <Container>
           <AboutMe />
-          <Intro />
           {/* {heroPost && (
             <HeroPost
               title={heroPost.title}
@@ -29,6 +28,9 @@ export default function Index({ allPosts }) {
               excerpt={heroPost.excerpt}
             />
           )} */}
+        </Container>
+        <Container>
+          <Intro />
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
         </Container>
       </Layout>
