@@ -15,6 +15,7 @@ module.exports = {
         cyan: "#79FFE1",
         "brand-blue": "#00ADB5",
         "brand-background": "#222831",
+        "brand-light-grey": "#E6E6E6",
       },
       spacing: {
         28: "7rem",

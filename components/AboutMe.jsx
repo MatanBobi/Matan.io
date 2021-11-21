@@ -25,13 +25,17 @@ export default function AboutMe(props) {
           /> */}
         </div>
       </div>
-      <div className="flex flex-col flex-1 justify-center">
-        <h2 className="font-title font-bold text-7xl md:text-7xl font-bold md:pr-8">
+      <div className="flex flex-col flex-1 justify-center flex-grow">
+        <h2 className="font-title text-7xl md:text-7xl font-bold md:pr-8">
           Hello
         </h2>
-        {/* <h3 className="text-xl md:text-3xl font-bold tracking-tighter leading-tight md:pr-8">
-          Frontend Developer
-        </h3> */}
+        <h3 className="text-xl md:text-2xl tracking-tighter font-sans text-brand-light-grey leading-tight md:pr-8">
+          <div>Nice to meet you 👋</div>
+          <div className="mb-6">
+            I'm Matan Borenkraout - a Frontend Engineer, speaker & blogger.
+          </div>
+          Making better software, one word at a time 🔥
+        </h3>
       </div>
       <div className="flex-1"></div>
     </div>
