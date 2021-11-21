@@ -6,7 +6,7 @@ export default function AboutMe(props) {
   return (
     <div className="flex mt-20 mb-28">
       <div className="flex flex-1 justify-center items-center">
-        <div className="w-min border-12 border-brand-blue rounded-full">
+        <div className="w-min border-12 border-brand-blue rounded-full hover:border-4 transition-all duration-300">
           <div
             className="rounded-full"
             style={{

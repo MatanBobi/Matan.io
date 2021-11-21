@@ -5,6 +5,9 @@ module.exports = {
     "./components/**/*.jsx",
     "./pages/**/*.jsx",
   ],
+  variants: {
+    borderWidth: ["hover"],
+  },
   theme: {
     extend: {
       colors: {
