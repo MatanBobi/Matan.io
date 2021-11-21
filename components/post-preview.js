@@ -13,8 +13,8 @@ export default function PostPreview({
   slug,
 }) {
   return (
-    <div className="flex flex-col p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-      <div className="mb-5 rounded-lg overflow-hidden">
+    <div className="flex flex-col p-4 rounded-lg border-brand-dark-grey border">
+      <div className="mb-4 rounded-lg overflow-hidden">
         <CoverImage
           slug={slug}
           title={title}
@@ -23,7 +23,7 @@ export default function PostPreview({
           width={556}
         />
       </div>
-      <h3 className="text-xl font-title font-medium mb-3 leading-snug">
+      <h3 className="text-2xl font-title font-bold mb-3 leading-snug">
         <Link as={`/posts/${slug}`} href="/posts/[slug]">
           <a className="hover:underline">{title}</a>
         </Link>

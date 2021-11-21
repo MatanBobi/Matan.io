@@ -1,5 +1,6 @@
 import Image from "next/image";
 import profilePic from "../public/assets/blog/authors/matan.jpeg";
+import { Button } from "./Button";
 
 export default function AboutMe(props) {
   return (
@@ -36,6 +37,9 @@ export default function AboutMe(props) {
           </div>
           Making better software, one word at a time 🔥
         </h3>
+        <div className="my-8">
+          <Button>Scroll to blog</Button>
+        </div>
       </div>
       <div className="flex-1"></div>
     </div>
