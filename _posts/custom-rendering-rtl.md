@@ -1,13 +1,15 @@
 ---
-title: "Custom rendering in React Testing Library Done Right"
-excerpt: "A quick explanation on creating a custom rendering function in RTL"
-coverImage: "/assets/blog/custom-rendering/banner.jpeg"
-date: "2020-04-12T05:35:07.322Z"
+title: Custom rendering in React Testing Library Done Right
+excerpt: A quick explanation on creating a custom rendering function in RTL
+coverImage: /assets/blog/custom-rendering/banner.jpeg
+date: '2020-04-12T05:35:07.322Z'
 author:
   name: Matan Borenkraout
-  picture: "/assets/blog/authors/matan.jpeg"
+  picture: /assets/blog/authors/matan.jpeg
 ogImage:
-  url: "/assets/blog/custom-rendering/banner.jpeg"
+  url: /assets/blog/custom-rendering/banner.jpeg
+draft: true
+slug: custom-rendering-react-testing-library
 ---
 
 Browsing multiple projects, I encountered a recurring pattern when trying to write a custom render for components that use Providers (React-Redux’s `Provider`, React-Intl’s `IntlProvider` for example).  

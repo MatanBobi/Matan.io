@@ -1,4 +1,5 @@
 import { Logo } from "../Logo";
+import Link from "next/link";
 
 export const Header = () => {
   return (
@@ -6,7 +7,9 @@ export const Header = () => {
       <Logo />
       <nav>
         <ul className="flex font-bold text-lg">
-          <li className="my-11 mx-6">Blog</li>
+          <li className="my-11 mx-6">
+            <Link href="/blog">Blog</Link>
+          </li>
           <li className="my-11 mx-6">About</li>
           <li className="my-11 mx-6">Contact</li>
         </ul>

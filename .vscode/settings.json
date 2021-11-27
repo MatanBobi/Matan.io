@@ -4,5 +4,7 @@
     "yaml": false,
     "plaintext": false,
     "markdown": false
-  }
+  },
+  "frontMatter.content.autoUpdateDate": false,
+  "[markdown]": {}
 }

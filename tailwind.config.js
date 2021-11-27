@@ -40,6 +40,9 @@ module.exports = {
       borderWidth: {
         12: "12px",
       },
+      borderRadius: {
+        "4xl": "200px",
+      },
       fontFamily: {
         sans: "Karla, sans-serif",
         logo: "Montserrat, sans-serif",
