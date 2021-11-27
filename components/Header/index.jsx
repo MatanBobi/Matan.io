@@ -1,11 +1,12 @@
 import { Logo } from "../Logo";
 import Link from "next/link";
+import Image from "next/image";
 
 export const Header = () => {
   return (
-    <header className="flex">
+    <header className="flex justify-between md:justify-start">
       <Logo />
-      <nav>
+      <nav className="hidden md:flex">
         <ul className="flex font-bold text-lg">
           <li className="my-11 mx-6">
             <Link href="/blog">Blog</Link>
@@ -14,6 +15,16 @@ export const Header = () => {
           <li className="my-11 mx-6">Contact</li>
         </ul>
       </nav>
+      <div className="block md:hidden">
+        <div className="m-9">
+          <Image
+            src="/assets/icons/menu.svg"
+            height={32}
+            width={32}
+            alt="Menu"
+          />
+        </div>
+      </div>
     </header>
   );
 };

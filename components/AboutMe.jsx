@@ -4,15 +4,13 @@ import { Button } from "./Button";
 
 export default function AboutMe(props) {
   return (
-    <div className="flex mt-20 mb-28">
+    <div className="flex flex-col md:flex-row mt-20 mb-28">
       <div className="flex flex-initial justify-center items-center">
         <div className="w-min border-12 border-brand-blue rounded-full md:mx-16">
           <div
-            className="rounded-full"
+            className="rounded-full h-56 w-40 md:h-72 md:w-56"
             style={{
               backgroundImage: `url(${profilePic.src})`,
-              width: "224px",
-              height: "304px",
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "40% 50%",
@@ -27,14 +25,6 @@ export default function AboutMe(props) {
         </div>
       </div>
       <div className="flex flex-col flex-1 justify-center flex-grow">
-        <div className="z-0 bg-gradient-to-t h-80 w-80 absolute">
-          {/* <div className="w-20 h-32 bg-brand-blue rounded-4xl top-0 right-1 transform rotate-12 absolute"></div>
-          <div className="w-20 h-32 bg-brand-blue rounded-4xl top-4 right-32 transform rotate-12 absolute"></div>
-          <div className="w-20 h-32 bg-brand-blue rounded-4xl top-8 right-64 transform rotate-12 absolute"></div>
-          <div className="w-20 h-32 bg-brand-blue rounded-4xl top-56 right-1 transform rotate-12 absolute"></div>
-          <div className="w-20 h-32 bg-brand-blue rounded-4xl top-60 right-32 transform rotate-12 absolute"></div>
-          <div className="w-20 h-32 bg-brand-blue rounded-4xl top-64 right-64 transform rotate-12 absolute"></div> */}
-        </div>
         <h2 className="font-title text-7xl md:text-7xl font-bold md:pr-8 z-10">
           Hello
         </h2>
