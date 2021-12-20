@@ -5,7 +5,11 @@ import Image from "next/image";
 export const Header = () => {
   return (
     <header className="flex justify-between md:justify-start">
-      <Logo />
+      <Link href="/" passHref>
+        <a>
+          <Logo />
+        </a>
+      </Link>
       <nav className="hidden md:flex">
         <ul className="flex font-bold text-lg">
           <li className="my-11 mx-6">

@@ -16,12 +16,6 @@ export default function AboutMe(props) {
               backgroundPosition: "40% 50%",
             }}
           />
-          {/* <Image
-            className="rounded-3xl p-6 border border-gray-300"
-            src={profilePic}
-            height="320"
-            width="320"
-          /> */}
         </div>
       </div>
       <div className="flex flex-col flex-1 justify-center flex-grow">
