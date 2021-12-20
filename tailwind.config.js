@@ -1,13 +1,10 @@
 module.exports = {
-  purge: [
+  content: [
     "./components/**/*.js",
     "./pages/**/*.js",
     "./components/**/*.jsx",
     "./pages/**/*.jsx",
   ],
-  variants: {
-    borderWidth: ["hover"],
-  },
   theme: {
     extend: {
       colors: {
@@ -63,4 +60,9 @@ module.exports = {
       },
     },
   },
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/aspect-ratio"),
+  ],
+  darkMode: "class",
 };

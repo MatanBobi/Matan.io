@@ -11,17 +11,12 @@ export default function PostPreview({
   excerpt,
   author,
   slug,
+  readTime,
 }) {
   return (
     <div className="flex flex-col p-4 rounded-lg border-brand-dark-grey border">
       <div className="mb-4 rounded-lg overflow-hidden">
-        <CoverImage
-          slug={slug}
-          title={title}
-          src={coverImage}
-          height={278}
-          width={556}
-        />
+        <CoverImage slug={slug} title={title} src={coverImage} />
       </div>
       <h3 className="text-2xl font-title font-bold mb-3 leading-snug">
         <Link as={`/posts/${slug}`} href="/posts/[slug]">
@@ -29,7 +24,7 @@ export default function PostPreview({
         </Link>
       </h3>
       <div className="text-md mb-4">
-        <DateFormatter dateString={date} />
+        <DateFormatter dateString={date} /> - {readTime.text}
       </div>
       <p className="text-md leading-tight mb-4 text-brand-light-grey font-sans">
         {excerpt}

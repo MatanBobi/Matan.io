@@ -6,7 +6,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Meta />
-      <div className="min-h-screen bg-brand-background text-white">
+      <div className="min-h-screen bg-brand-background text-white dark">
         <Header />
         <main>{children}</main>
       </div>

@@ -16,6 +16,7 @@ export default function MoreStories({ posts }) {
             author={post.author}
             slug={post.slug}
             excerpt={post.excerpt}
+            readTime={post.readTime}
           />
         ))}
       </div>
