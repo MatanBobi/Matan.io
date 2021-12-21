@@ -8,7 +8,6 @@ author:
   picture: /assets/blog/authors/matan.jpeg
 ogImage:
   url: /assets/blog/custom-rendering/banner.jpeg
-draft: true
 ---
 
 Browsing multiple projects, I encountered a recurring pattern when trying to write a custom render for components that use Providers (React-Redux’s `Provider`, React-Intl’s `IntlProvider` for example).  

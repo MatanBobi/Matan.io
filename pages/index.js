@@ -4,7 +4,7 @@ import Container from "../components/container";
 import MoreStories from "../components/more-stories";
 import Intro from "../components/intro";
 import Layout from "../components/layout";
-import { getAllPosts } from "../lib/api";
+import { getNPostsFromStart } from "../lib/api";
 import AboutMe from "../components/AboutMe";
 import { SideCircles } from "../components/SideCircles";
 import { Button } from "../components/Button";
@@ -36,7 +36,7 @@ export default function Index({ allPosts }) {
 }
 
 export async function getStaticProps() {
-  const allPosts = getAllPosts([
+  const allPosts = getNPostsFromStart(3, [
     "title",
     "date",
     "slug",
