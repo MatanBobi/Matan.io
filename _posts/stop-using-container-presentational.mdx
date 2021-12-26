@@ -1,0 +1,37 @@
+---
+title: "Why you should stop using the “container/presentational” pattern in Redux"
+excerpt: "The redux style guide has an important rule: “Connect More Components to Read Data from the Store”. This rule has some important performance aspects that are covered with an example in this post."
+coverImage: /assets/blog/stop-using-container-presentational/banner.jpeg
+date: "2021-08-03T05:35:07.322Z"
+author:
+  name: Matan Borenkraout
+  picture: /assets/blog/authors/matan.jpeg
+ogImage:
+  url: /assets/blog/stop-using-container-presentational/banner.jpeg
+---
+
+> TL;DR:  
+> The redux style guide has an important rule: “Connect More Components to Read Data from the Store”. This rule has some important performance aspects that > are covered with an example in this post.
+
+The “Container/Presentational” Pattern used to be the best practice when using redux or any other store management package.
+It was explained thoroughly by [Dan Abramov](https://twitter.com/dan_abramov) and [Michael Chan](https://twitter.com/chantastic).
+If we want to keep it short, a `container` usually holds the data fetching logic and data access to store. On the other hand, a `presentational` component is more generic and just present the data it gets as `props`.
+This pattern was common before React Hooks were introduced and probably every developer using React with classes has seen or used it.
+
+But in the world of hooks, this approach can cause serious performance issues (we will cover those later on).  
+Moreover, the [Redux best practices](https://redux.js.org/style-guide/style-guide#connect-more-components-to-read-data-from-the-store) now suggests we should connect more components to read directly from the store (which is quite the opposite to this pattern).
+
+> “Prefer having more UI components subscribed to the Redux store and reading data at a more granular level. This typically leads to better UI performance, as fewer components will need to render when a given piece of state changes.” (The redux docs)
+
+But, what’s the reason behind this rule?
+
+## Our example app
+
+I’ve built a small app with a sidebar fetching all the Pokemons (with a Select that decides how many Pokemons to fetch), and a right box showing the selected Pokemon. Clicking on a Pokemon name at the left, will change the image and fetch the relevant data.  
+The UI looks like this:  
+![App screenshot](/assets/blog/stop-using-container-presentational/1.png)
+
+In the first approach, I decided to use [`connect`](https://react-redux.js.org/api/connect) on a `container`, query all the data from the store and also `mapDispatchToProps` so I’ll be able to dispatch some data fetching.  
+I passed the data to my components using props (the example uses styled-components but the actual styles were left behind):
+
+> TODO: Implement Gist support

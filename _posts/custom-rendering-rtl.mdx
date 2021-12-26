@@ -8,12 +8,13 @@ author:
   picture: /assets/blog/authors/matan.jpeg
 ogImage:
   url: /assets/blog/custom-rendering/banner.jpeg
+hideCoverImage: true
 ---
 
 Browsing multiple projects, I encountered a recurring pattern when trying to write a custom render for components that use Providers (React-Redux’s `Provider`, React-Intl’s `IntlProvider` for example).  
 This pattern usually looks like this:
 
-![Renderwithredux example](./images/banner.jpg)
+![Renderwithredux example](/assets/blog/custom-rendering/banner.jpeg)
 
 This function is nice. It creates a utility that lets us call it whenever we want to test a connected component. The only problem is, it’s limited and causes an inconsistent behavior.  
 Usually, our app will work with several `Providers`, not only one, and this solution becomes squeaky when we try to add more `Providers` to it.  

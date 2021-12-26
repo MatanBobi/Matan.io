@@ -1,14 +1,15 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import calculateReadingTime from "reading-time";
+import { serialize } from "next-mdx-remote/serialize";
 import Container from "../../components/container";
-import PostBody from "../../components/post-body";
 import PostHeader from "../../components/post-header";
 import Layout from "../../components/layout";
 import { getPostBySlug, getAllPosts } from "../../lib/api";
 import PostTitle from "../../components/post-title";
 import Head from "next/head";
-import markdownToHtml from "../../lib/markdownToHtml";
+import { MDXRemote } from "next-mdx-remote";
+import { components } from "../../components/MDX";
 
 export default function Post({ post, preview }) {
   const router = useRouter();
@@ -33,8 +34,13 @@ export default function Post({ post, preview }) {
                 date={post.date}
                 author={post.author}
                 readTime={post.readTime}
+                hideCoverImage={post.hideCoverImage}
               />
-              <PostBody content={post.content} />
+              <div className="max-w-2xl mx-auto">
+                <div className="prose prose-neutral lg:prose-xl dark:prose-invert">
+                  <MDXRemote {...post.mdxSource} components={components} />
+                </div>
+              </div>
             </article>
           </>
         )}
@@ -52,15 +58,17 @@ export async function getStaticProps({ params }) {
     "content",
     "ogImage",
     "coverImage",
+    "hideCoverImage",
   ]);
-  const content = await markdownToHtml(post.content || "");
+
+  const mdxSource = await serialize(post.content);
   const readTime = calculateReadingTime(post.content);
   return {
     props: {
       post: {
         ...post,
-        content,
         readTime,
+        mdxSource,
       },
     },
   };
