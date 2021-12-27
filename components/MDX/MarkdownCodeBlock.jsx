@@ -1,5 +1,5 @@
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { nightOwl } from "react-syntax-highlighter/dist/cjs/styles/hljs";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { nord } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 export const MarkdownCodeBlock = ({ className, ...props }) => {
   const match = /language-(\w+)/.exec(className || "");
@@ -7,7 +7,7 @@ export const MarkdownCodeBlock = ({ className, ...props }) => {
     <SyntaxHighlighter
       language={match[1]}
       PreTag="div"
-      style={nightOwl}
+      style={nord}
       {...props}
     />
   ) : (
