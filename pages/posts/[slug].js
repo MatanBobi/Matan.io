@@ -37,7 +37,7 @@ export default function Post({ post, preview }) {
                 hideCoverImage={post.hideCoverImage}
               />
               <div className="max-w-2xl mx-auto">
-                <div className="prose prose-neutral lg:prose-xl dark:prose-invert">
+                <div className="prose prose-neutral lg:prose-xl dark:prose-invert lg:prose-pre:p-0">
                   <MDXRemote {...post.mdxSource} components={components} />
                 </div>
               </div>

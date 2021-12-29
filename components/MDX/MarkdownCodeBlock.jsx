@@ -7,6 +7,7 @@ export const MarkdownCodeBlock = ({ className, ...props }) => {
     <SyntaxHighlighter
       language={match[1]}
       PreTag="div"
+      customStyle={{ margin: 0 }}
       style={nord}
       {...props}
     />

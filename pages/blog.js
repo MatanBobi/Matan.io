@@ -46,6 +46,7 @@ export default function Blog({ allPosts }) {
             onChange={(value) => {
               setFilter(value);
             }}
+            placeholder="Search"
           />
         </Container>
         <Container>

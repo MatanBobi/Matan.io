@@ -17,6 +17,7 @@ module.exports = {
         "brand-background": "#222831",
         "brand-light-grey": "#E6E6E6",
         "brand-dark-grey": "#393E46",
+        "brand-black": "#222831"
       },
       spacing: {
         28: "7rem",

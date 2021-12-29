@@ -14,7 +14,7 @@ export default function PostPreview({
   readTime,
 }) {
   return (
-    <div className="flex flex-col p-4 rounded-lg border-brand-dark-grey border">
+    <div className="flex flex-col p-4 rounded-lg border-brand-light-grey dark:border-brand-dark-grey border">
       <div className="mb-4 rounded-lg overflow-hidden">
         <CoverImage slug={slug} title={title} src={coverImage} />
       </div>
@@ -26,7 +26,7 @@ export default function PostPreview({
       <div className="text-md mb-4">
         <DateFormatter dateString={date} /> - {readTime.text}
       </div>
-      <p className="text-md leading-tight mb-4 text-brand-light-grey font-sans">
+      <p className="text-md leading-tight mb-4 text-brand-dark-grey dark:text-brand-light-grey font-sans">
         {excerpt}
       </p>
     </div>
