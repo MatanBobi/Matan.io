@@ -36,8 +36,8 @@ export default function Post({ post, preview }) {
                 readTime={post.readTime}
                 hideCoverImage={post.hideCoverImage}
               />
-              <div className="max-w-2xl mx-auto">
-                <div className="prose prose-neutral lg:prose-xl dark:prose-invert lg:prose-pre:p-0">
+              <div className="max-w-3xl mx-auto">
+                <div className="prose prose-neutral prose-pre:p-0 lg:prose-xl lg:prose-pre:p-0 dark:prose-invert prose-quoteless">
                   <MDXRemote {...post.mdxSource} components={components} />
                 </div>
               </div>

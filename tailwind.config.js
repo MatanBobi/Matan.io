@@ -17,7 +17,7 @@ module.exports = {
         "brand-background": "#222831",
         "brand-light-grey": "#E6E6E6",
         "brand-dark-grey": "#393E46",
-        "brand-black": "#222831"
+        "brand-black": "#222831",
       },
       spacing: {
         28: "7rem",
@@ -57,6 +57,14 @@ module.exports = {
         fade: {
           "0%, 100%": { opacity: 1 },
           "50%": { opacity: 0 },
+        },
+      },
+      typography: {
+        quoteless: {
+          css: {
+            "blockquote p:first-of-type::before": { content: "none" },
+            "blockquote p:first-of-type::after": { content: "none" },
+          },
         },
       },
     },

@@ -1,0 +1,161 @@
+---
+title: "Introducing: The Async Cookie Store API"
+excerpt: "The Cookie Store API is a new browser API built to expose cookies to service worker and offer an asynchronous alternative to document.cookie. It’s available in Chrome Browser starting from version 87."
+coverImage: /assets/blog/introducing-the-async-cookie-store/banner.jpeg
+date: "2020-10-17T05:35:07.322Z"
+author:
+  name: Matan Borenkraout
+  picture: /assets/blog/authors/matan.jpeg
+ogImage:
+  url: /assets/blog/introducing-the-async-cookie-store/banner.jpeg
+hideCoverImage: true
+---
+
+> TLDR:
+> The Cookie Store API is a new browser API built to expose cookies to service worker and offer an asynchronous alternative to document.cookie. It’s available in Chrome Browser starting from version 87.
+
+Are you sick and tired of weird ways to get cookies from `document.cookie` ? Hate it that you don’t know whether the cookie you set was actually saved or not? Introducing: Cookie Store API, available on Chrome version 87!
+
+![Cookies](/assets/blog/introducing-the-async-cookie-store/banner.jpeg)
+
+### Motivation
+
+We all use HTTP Cookies almost daily, but working with them was never an easy task.  
+The cookies interface is overly complexed and contains performance issues.  
+Saving all of the cookies in `document.cookie` which is part of the Document Object Model from October 2000, seems like a pattern that doesn’t correspond to the javascript we write these days.
+
+The Cookie Store API aims to improve this by providing an asynchronous alternative to `document.cookie` and exposing HTTP cookies to service workers, which will also benefit performance. It’s available on Chrome Browser starting from version 87 but still didn’t land in any other major browsers.
+
+### Get Cookies
+
+Getting a cookie always looked odd to me. Why do I have a full string containing all of the cookies?
+Getting a specific cookie always seems like an over-complex solution, using some regex or looping over the `document.cookie` value.  
+In fact, all of us who need cookies probably have this util taken from some [StackOverflow answer](https://stackoverflow.com/a/24103596/4232673) in their codebase:
+
+```js
+function getCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(";");
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == " ") c = c.substring(1, c.length);
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
+}
+
+const cookie = getCookie("opted-out");
+```
+
+In the new way, all we need to do is use the `cookieStore` object and call its `get` function. Don’t forget that this returns a promise so you `await` for its result and if something wrong happened, it would throw an error:
+
+```js
+try {
+  const cookie = await cookieStore.get("opted-out");
+  if (cookie) {
+    console.log(`Found ${cookie.name} cookie: ${cookie.value}`);
+  } else {
+    console.log("Cookie not found");
+  }
+} catch (e) {
+  console.error(`Cookie store error: ${e}`);
+}
+```
+
+No more looping over a cookies string! Amazing!
+
+### Set Cookie
+
+Don't you just hate setting a cookie? The API seems so old-fashioned.
+
+```js
+document.cookie = `opted-out=true; Expires=${
+  Date.now() + onde_day_ms
+}; domain: example.org`;
+```
+
+Following what we wrote about getting cookies, the `setCookie` util probably looks somewhat like this:
+
+```js
+function setCookie(name, value, days) {
+  var expires = "";
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+    expires = "; expires=" + date.toUTCString();
+  }
+  document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+```
+
+After doing that, we’d probably also want to know that the cookie was successfully created. So we’ll use the `getCookie` util from before and loop over the cookies string to find that cookie.
+
+In the new API, what you’ll need to do is use the `cookieStore` object and call the `set` function with the params, that’s all.
+
+```js
+try {
+  await cookieStore.set({
+    name: "opted-out",
+    value: true,
+    expiers: Date.now() + one_day_ms,
+    domain: "example.org",
+  });
+} catch (e) {
+  console.error(`Failed to set cookie: ${e}`);
+}
+```
+
+After calling that function, as long as we didn’t get to the `catch` block, we can be 100% sure that the cookie was saved successfully, and we don’t need to loop over anything or call `cookieStore.get` to see that it was saved.
+
+### Delete Cookies
+
+To delete the cookie, we probably had something similar to this util:
+
+```js
+function deleteCookie(name) {
+  document.cookie = name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+}
+```
+
+It will basically set the cookie date to an old date and count on the browser to delete it since it’s already expired.
+
+In the new way, you’ll need to call the `delete` function:
+
+```js
+try {
+  await cookieStore.delete("opted-out");
+} catch (e) {
+  console.error(`Failed to delete cookie: ${e}`);
+}
+```
+
+Once again, as long as we didn’t get to the `catch` block, you can 100% be sure that the delete happened.
+
+### Monitoring Cookies
+
+A cool thing you can do with the new `Cookie Store API` is know when the cookie object was changed and act on it:
+
+```js
+cookieStore.addEventListener("change", (event) => {
+  console.log(`${event.changed.length} changed cookies`);
+  for (const cookie in event.changed) {
+    console.log(`Cookie ${cookie.name} changed to ${cookie.value}`);
+  }
+
+  console.log(`${event.deleted.length} deleted cookies`);
+  for (const cookie in event.deleted) {
+    console.log(`Cookie ${cookie.name} deleted`);
+  }
+});
+```
+
+### Summary
+
+It looks like the Chrome team tackled a problem we took for granted for a long time, and I do believe that this is great progress towards a better web!  
+If you’d like to read more, you can visit the [Cookie Store API Draft](https://wicg.github.io/cookie-store/).
+
+Feel free to ask me any question, I'm available on [twitter](https://twitter.com/matanbobi).
+
+Hope you enjoyed!  
+Thanks,  
+— Matan.
