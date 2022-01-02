@@ -45,7 +45,7 @@ export default function Post({ post, preview }) {
                 hideCoverImage={post.hideCoverImage}
               />
               <div className="max-w-3xl mx-auto">
-                <div className="prose prose-neutral prose-pre:p-0 lg:prose-xl lg:prose-pre:p-0 dark:prose-invert prose-quoteless">
+                <div className="prose prose-neutral prose-pre:p-0 lg:prose-xl lg:prose-pre:p-0 dark:prose-invert prose-quoteless prose-code:p-0.5 prose-code:rounded prose-code:font-normal prose-code:bg-slate-800 prose-code:bg-opacity-20 dark:prose-code:bg-slate-100 dark:prose-code:bg-opacity-20">
                   <MDXRemote {...post.mdxSource} components={components} />
                 </div>
               </div>

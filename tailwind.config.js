@@ -64,6 +64,8 @@ module.exports = {
           css: {
             "blockquote p:first-of-type::before": { content: "none" },
             "blockquote p:first-of-type::after": { content: "none" },
+            "code::before": { content: "none" },
+            "code::after": { content: "none" },
           },
         },
       },
