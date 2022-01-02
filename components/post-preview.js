@@ -14,21 +14,21 @@ export default function PostPreview({
   readTime,
 }) {
   return (
-    <div className="flex flex-col p-4 rounded-lg border-brand-light-grey dark:border-brand-dark-grey border">
-      <div className="mb-4 rounded-lg overflow-hidden">
-        <CoverImage slug={slug} title={title} src={coverImage} />
+    <Link as={`/posts/${slug}`} href="/posts/[slug]" passHref>
+      <div className="flex flex-col p-4 rounded-lg border-brand-light-grey dark:border-brand-dark-grey border cursor-pointer">
+        <div className="mb-4 rounded-lg overflow-hidden">
+          <CoverImage slug={slug} title={title} src={coverImage} />
+        </div>
+        <h3 className="text-2xl font-title font-bold mb-3 leading-snug">
+          <span className="hover:underline">{title}</span>
+        </h3>
+        <div className="text-md mb-4">
+          <DateFormatter dateString={date} /> - {readTime.text}
+        </div>
+        <p className="text-md leading-tight mb-4 text-brand-dark-grey dark:text-brand-light-grey font-sans">
+          {excerpt}
+        </p>
       </div>
-      <h3 className="text-2xl font-title font-bold mb-3 leading-snug">
-        <Link as={`/posts/${slug}`} href="/posts/[slug]">
-          <a className="hover:underline">{title}</a>
-        </Link>
-      </h3>
-      <div className="text-md mb-4">
-        <DateFormatter dateString={date} /> - {readTime.text}
-      </div>
-      <p className="text-md leading-tight mb-4 text-brand-dark-grey dark:text-brand-light-grey font-sans">
-        {excerpt}
-      </p>
-    </div>
+    </Link>
   );
 }

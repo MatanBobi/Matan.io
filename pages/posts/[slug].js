@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import calculateReadingTime from "reading-time";
@@ -10,9 +11,17 @@ import PostTitle from "../../components/post-title";
 import Head from "next/head";
 import { MDXRemote } from "next-mdx-remote";
 import { components } from "../../components/MDX";
+import { PostFooter } from "../../components/PostFooter";
 
 export default function Post({ post, preview }) {
   const router = useRouter();
+  const [permalink, setPermalink] = useState("");
+  useEffect(() => {
+    const host = window.location.host;
+    const baseUrl = `https://${host}`;
+
+    setPermalink(`${baseUrl}${router.asPath}`);
+  }, [router.asPath]);
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
@@ -32,7 +41,6 @@ export default function Post({ post, preview }) {
                 title={post.title}
                 coverImage={post.coverImage}
                 date={post.date}
-                author={post.author}
                 readTime={post.readTime}
                 hideCoverImage={post.hideCoverImage}
               />
@@ -41,6 +49,12 @@ export default function Post({ post, preview }) {
                   <MDXRemote {...post.mdxSource} components={components} />
                 </div>
               </div>
+              <PostFooter
+                author={post.author}
+                url={permalink}
+                slug={post.slug}
+                title={post.title}
+              />
             </article>
           </>
         )}
