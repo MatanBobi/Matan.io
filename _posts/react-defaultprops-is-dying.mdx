@@ -1,0 +1,93 @@
+---
+title: "React defaultProps is dying, who’s the contender?"
+excerpt: "React as we all know it, is changing. As a frontend developer with React experience for the past 3 years, selling me these changes was quite hard."
+coverImage: /assets/blog/react-defaultprops-is-dying/banner.png
+date: "2019-07-29T05:35:07.322Z"
+author:
+  name: Matan Borenkraout
+  picture: /assets/blog/authors/matan.jpeg
+ogImage:
+  url: /assets/blog/react-defaultprops-is-dying/banner.png
+hideCoverImage: true
+draft: true
+---
+
+React as we all know it, is changing. As a frontend developer with React experience for the past 3 years, selling me these changes was quite hard.  
+I’m here today as the seller and not as the buyer, hoping I will catch you in the fever I got once I understood what’s behind all these changes :)
+
+![Default props example](/assets/blog/react-defaultprops-is-dying/banner.png)
+
+After the React team announced [Hooks](https://reactjs.org/docs/hooks-intro.html), and pushed functional components as a “solution for all our problems”, this thought ran in my head, why should we use React’s `defaultProps` and not ES6 Default values for functional components?  
+Then I found this [RFC](https://github.com/reactjs/rfcs/pull/107) that pretty much says what the React core team thinks about the idea
+
+In this post I’ll cover my thoughts and share some performance conclusions.  
+I’ll start with a simple explanation regarding `defaultProps` and ES6 Default Values. To avoid confusion, let’s decide to call React `defaultProps` React def. values and ES6 Default Values ES6 def. values. If you’re already familiar with the syntax, feel free to jump to the conclusions part.
+
+### React def. values
+
+Since React v15.5, runtime type checking for component’s props moved to a unified package called `prop-types`. This package gives us the ability to type check a component’s props and give it default values, for example lets look at a Greet component:
+
+```jsx
+const Greet = ({ firstName, lastName }) => {
+  return <div>{`Hi ${firstName} ${lastName}`}!</div>;
+};
+
+Greet.propTypes = {
+  firstName: PropTypes.string,
+  lastName: PropTypes.string,
+};
+```
+
+If we try to render Greet without giving it props:
+
+```jsx
+const Header = (props) => {
+  return (
+    <React.Fragment>
+      <Logo />
+      <Greet />
+    </React.Fragment>
+  );
+};
+```
+
+We will get something like this:
+
+```
+Hi undefined undefined!
+```
+
+`defaultProps` lets us avoid this scenario by setting default values to props:
+
+```js
+Greet.defaultProps = {
+  firstName: "John",
+  lastName: "Doe",
+};
+```
+
+so when not passing the relevant props we will get:
+
+```
+Hi John Doe!
+```
+
+### ES6 def. values
+
+Another option we can use in **functional components only**, is setting default values with ES6 Destructuring assignment syntax.  
+Let’s take the Greet component we’ve created above and change it so it will contain default values.
+
+```jsx
+const Greet = ({ firstName = "John", lastName = "Doe" }) => {
+  return <div>{`Hi ${firstName} ${lastName}`}!</div>;
+};
+```
+
+As simple as that.  
+So what should we use?
+
+---
+
+As everything is in programming, it’s a tradeoff, let’s see why.
+
+### Advantages and Disadvantages of React defaults

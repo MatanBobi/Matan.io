@@ -65,9 +65,10 @@ export async function getStaticProps(context) {
     "author",
     "coverImage",
     "excerpt",
+    "draft",
   ]);
-
+  const filteredPosts = allPosts.filter((post) => !post.draft);
   return {
-    props: { allPosts },
+    props: { allPosts: filteredPosts },
   };
 }
