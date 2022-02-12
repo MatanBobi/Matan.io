@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Image from "next/image";
 import ErrorPage from "next/error";
 import calculateReadingTime from "reading-time";
 import { serialize } from "next-mdx-remote/serialize";
@@ -12,6 +13,8 @@ import Head from "next/head";
 import { MDXRemote } from "next-mdx-remote";
 import { components } from "../../components/MDX";
 import { PostFooter } from "../../components/PostFooter";
+import { SideCircles } from "../../components/SideCircles";
+import { Button } from "../../components/Button";
 
 export default function Post({ post, preview }) {
   const router = useRouter();
@@ -27,12 +30,25 @@ export default function Post({ post, preview }) {
   }
   return (
     <Layout preview={preview}>
-      <Container>
+      <SideCircles />
+      <Container className="max-w-4xl">
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article className="pb-32">
+            <Button
+              className="flex items-center justify-center text-lg py-3.5 my-6 md:my-12"
+              onClick={() => router.back()}
+            >
+              <Image
+                src="/assets/icons/arrow-back.svg"
+                height={24}
+                width={24}
+                alt="Back"
+              />
+              Back
+            </Button>
+            <article className="pb-32 relative">
               <Head>
                 <title>{post.title} | Matan.io</title>
                 <meta property="og:image" content={post.ogImage.url} />

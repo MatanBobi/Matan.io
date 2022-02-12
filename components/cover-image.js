@@ -7,7 +7,7 @@ export default function CoverImage({ title, src, slug, style }) {
     <Image
       src={src}
       alt={`Cover Image for ${title}`}
-      className="object-cover"
+      className="object-cover rounded-lg"
       layout="fill"
     />
   );

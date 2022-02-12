@@ -16,7 +16,7 @@ export default function PostPreview({
   return (
     <Link as={`/posts/${slug}`} href="/posts/[slug]" passHref>
       <div className="flex flex-col p-4 rounded-lg border-brand-light-grey dark:border-brand-dark-grey border cursor-pointer">
-        <div className="mb-4 rounded-lg overflow-hidden">
+        <div className="mb-4 overflow-hidden">
           <CoverImage slug={slug} title={title} src={coverImage} />
         </div>
         <h3 className="text-2xl font-title font-bold mb-3 leading-snug">

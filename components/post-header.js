@@ -13,8 +13,13 @@ export default function PostHeader({
   return (
     <>
       <PostTitle>{title}</PostTitle>
+      <div className="max-w-3xl mx-auto">
+        <div className="mb-12 text-l md:text-xl lg:text-2xl dark:text-brand-light-grey">
+          <DateFormatter dateString={date} /> - {readTime.text}
+        </div>
+      </div>
       {!hideCoverImage && (
-        <div className="mb-8 md:mb-16 sm:mx-0">
+        <div className="mb-8 md:mb-16 sm:mx-0 p-4 bg-white dark:bg-brand-background rounded-lg border-brand-light-grey dark:border-brand-dark-grey border">
           <CoverImage
             title={title}
             src={coverImage}
@@ -23,11 +28,6 @@ export default function PostHeader({
           />
         </div>
       )}
-      <div className="max-w-3xl mx-auto">
-        <div className="mb-6 text-lg">
-          <DateFormatter dateString={date} /> - {readTime.text}
-        </div>
-      </div>
     </>
   );
 }
