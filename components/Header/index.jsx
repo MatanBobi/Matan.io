@@ -33,8 +33,8 @@ export const Header = ({ onClickChangeTheme }) => {
             <li className="my-11 mx-6">
               <Link href="/blog">Blog</Link>
             </li>
-            <li className="my-11 mx-6">About</li>
-            <li className="my-11 mx-6">Contact</li>
+            {/* <li className="my-11 mx-6">About</li>
+            <li className="my-11 mx-6">Contact</li> */}
           </ul>
         </nav>
         <div className="ml-auto">

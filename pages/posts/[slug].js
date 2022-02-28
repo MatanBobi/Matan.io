@@ -9,12 +9,12 @@ import PostHeader from "../../components/post-header";
 import Layout from "../../components/layout";
 import { getPostBySlug, getAllPosts } from "../../lib/api";
 import PostTitle from "../../components/post-title";
-import Head from "next/head";
 import { MDXRemote } from "next-mdx-remote";
 import { components } from "../../components/MDX";
 import { PostFooter } from "../../components/PostFooter";
 import { SideCircles } from "../../components/SideCircles";
 import { Button } from "../../components/Button";
+import { PostSeo } from "../../components/PostSocial/PostSeo";
 
 export default function Post({ post, preview }) {
   const router = useRouter();
@@ -28,6 +28,7 @@ export default function Post({ post, preview }) {
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
+
   return (
     <Layout preview={preview}>
       <SideCircles />
@@ -49,10 +50,12 @@ export default function Post({ post, preview }) {
               Back
             </Button>
             <article className="pb-32 relative">
-              <Head>
-                <title>{post.title} | Matan.io</title>
-                <meta property="og:image" content={post.ogImage.url} />
-              </Head>
+              <PostSeo
+                coverImage={post.ogImage.url}
+                readTime={post.readTime.text}
+                title={post.title}
+                date={post.date}
+              />
               <PostHeader
                 title={post.title}
                 coverImage={post.coverImage}

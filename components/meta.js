@@ -36,6 +36,8 @@ export default function Meta() {
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta name="description" content={`Matan Bobi's personal site`} />
+      <meta name="twitter:domain" content="matan.io" />
+      <meta name="twitter:creator" content="@matanbobi" />
       {/* <meta property="og:image" content={HOME_OG_IMAGE_URL} /> */}
     </Head>
   );
