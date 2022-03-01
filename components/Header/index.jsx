@@ -4,10 +4,13 @@ import Image from "next/image";
 import { IconButton } from "../Button/IconButton";
 import { useReadingProgress } from "../../hooks/useReadingProgress";
 import { useRouter } from "next/dist/client/router";
+import { HamburgerMenu } from "../HamburgerMenu";
+import { useState } from "react";
 
 export const Header = ({ onClickChangeTheme }) => {
   const completion = useReadingProgress();
   const router = useRouter();
+  const [isMenuOpen, setMenuOpen] = useState(false);
   const isInPostPage = router.pathname.includes("/posts/[slug]");
   return (
     <>
@@ -22,7 +25,7 @@ export const Header = ({ onClickChangeTheme }) => {
           />
         </div>
       )}
-      <header className="flex justify-between md:justify-start">
+      <header className="flex justify-between relative z-20 md:justify-start">
         <Link href="/" passHref>
           <a>
             <Logo />
@@ -31,7 +34,7 @@ export const Header = ({ onClickChangeTheme }) => {
         <nav className="hidden md:flex">
           <ul className="flex font-bold text-lg">
             <li className="my-11 mx-6">
-              <Link href="/blog">Blog</Link>
+              <Link href="/posts">Blog</Link>
             </li>
             {/* <li className="my-11 mx-6">About</li>
             <li className="my-11 mx-6">Contact</li> */}
@@ -47,16 +50,32 @@ export const Header = ({ onClickChangeTheme }) => {
             />
           </IconButton>
         </div>
-        <div className="block md:hidden">
-          <div className="m-9">
-            <Image
-              src="/assets/icons/menu.svg"
-              height={32}
-              width={32}
-              alt="Menu"
+        <div className="block md:hidden scale-35 z-20">
+          <div className="m-6">
+            <HamburgerMenu
+              onChange={() => setMenuOpen((prevValue) => !prevValue)}
+              value={isMenuOpen}
             />
           </div>
         </div>
+        {isMenuOpen && (
+          <div className="fixed z-10 md:hidden inset-0 bg-white dark:bg-brand-background text-white">
+            <nav className="flex flex-col">
+              <Link href="/" passHref>
+                <a>
+                  <Logo />
+                </a>
+              </Link>
+              <ul className="flex flex-col font-bold text-2xl">
+                <li className="my-11 mx-auto border-b">
+                  <Link href="/posts">Blog</Link>
+                </li>
+                {/* <li className="my-11 mx-6">About</li>
+            <li className="my-11 mx-6">Contact</li> */}
+              </ul>
+            </nav>
+          </div>
+        )}
       </header>
     </>
   );

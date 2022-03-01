@@ -16,3 +16,26 @@
 html {
   scroll-behavior: smooth;
 }
+
+label.ham-menu {
+  width: 70px;
+}
+
+label.ham-menu span {
+  border-radius: 10px;
+  height: 7px;
+  margin: 7px 0;
+  transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.ham-menu input[type="checkbox"]:checked ~ span:nth-of-type(1) {
+  transform: rotatez(45deg) translate(8px, 0px);
+}
+
+.ham-menu input[type="checkbox"]:checked ~ span:nth-of-type(2) {
+  transform: rotatez(-45deg);
+}
+
+.ham-menu input[type="checkbox"]:checked ~ span:nth-of-type(3) {
+  transform: translate(30px, -11px) rotatez(45deg);
+}

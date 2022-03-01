@@ -41,13 +41,15 @@ export default function Blog({ allPosts }) {
           <title>Matan.io</title>
         </Head>
         <Container className="my-8">
-          <Input
-            value={filter}
-            onChange={(value) => {
-              setFilter(value);
-            }}
-            placeholder="Search"
-          />
+          <div className="md:w-2/6">
+            <Input
+              value={filter}
+              onChange={(value) => {
+                setFilter(value);
+              }}
+              placeholder="Search"
+            />
+          </div>
         </Container>
         <Container>
           <MoreStories posts={filteredPosts} />

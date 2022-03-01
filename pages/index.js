@@ -25,7 +25,7 @@ export default function Index({ allPosts }) {
           <Intro />
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
           <div className="pb-10 flex justify-center">
-            <Link href="/blog" passHref>
+            <Link href="/posts" passHref>
               <Button>See more</Button>
             </Link>
           </div>

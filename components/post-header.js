@@ -14,7 +14,7 @@ export default function PostHeader({
     <>
       <PostTitle>{title}</PostTitle>
       <div className="max-w-3xl mx-auto">
-        <div className="mb-12 text-l md:text-xl lg:text-2xl dark:text-brand-light-grey">
+        <div className="mb-4 text-l md:text-xl lg:text-2xl dark:text-brand-light-grey md:mb-12">
           <DateFormatter dateString={date} /> - {readTime.text}
         </div>
       </div>

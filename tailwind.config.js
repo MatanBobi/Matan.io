@@ -53,6 +53,9 @@ module.exports = {
       animation: {
         fade: "fade 1s linear infinite",
       },
+      scale: {
+        35: "0.35",
+      },
       keyframes: {
         fade: {
           "0%, 100%": { opacity: 1 },

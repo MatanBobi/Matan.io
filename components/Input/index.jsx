@@ -9,7 +9,7 @@ export const Input = ({ children, onChange, value, disabled, placeholder }) => {
     <input
       onChange={onChangeWrapper}
       value={value}
-      className="rounded-full w-2/6 py-5 px-7 border-brand-dark-grey bg-brand-background border font-bold"
+      className="rounded-full w-full py-5 px-7 border-brand-dark-grey bg-brand-background border font-bold"
       disabled={disabled}
       placeholder={placeholder}
     />
