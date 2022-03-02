@@ -1,0 +1,41 @@
+---
+title: How to use Emojis as Favicons
+excerpt: If you wanted to use an Emoji as a favicon but wasn’t sure how to do it or if it’s supported, then here are all the details you need to know.
+coverImage: /assets/blog/how-to-use-emojis-as-favicons/banner.jpeg
+date: "2022-02-28T05:35:07.322Z"
+author:
+  name: Matan Borenkraout
+  picture: /assets/blog/authors/matan.jpeg
+ogImage:
+  url: /assets/blog/how-to-use-emojis-as-favicons/banner.jpeg
+hideCoverImage: true
+---
+
+If you wanted to use an Emoji as a favicon but wasn’t sure how to do it or if it’s supported, then here are all the details you need to know.
+
+## Support
+
+To simply use an emoji as a Favicon, we’ll need to use an SVG as our Favicon. This is supported in all ever-green browsers besides **Safari**.
+
+![A browser support matrix taken from https://caniuse.com/link-icon-svg](/assets/blog/how-to-use-emojis-as-favicons/banner.jpeg)
+
+## Method
+
+```html
+<link
+  rel="icon"
+  type="image/svg+xml"
+  sizes="any"
+  href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥬</text></svg>"
+/>
+```
+
+Adding this code snippet to your `head` section will give you a nice emoji favicon. Cool thing about this is that using `sizes="any"` gives us an option to support all resolutions and all sizes in just one line. This works only because we’re using `image/svg+xml` and SVG is “Scalable Vector Graphic”.
+
+Last but not least,
+I hope everyone’s feeling well and keeping themselves safe!
+If you have any questions, I’m here and also on [Twitter](https://twitter.com/matanbobi).  
+Feel free to ask or comment, I’d love to hear your feedback or help with any dilemmas you have :)
+
+Thanks,
+Matan.
