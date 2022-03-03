@@ -2,10 +2,9 @@ export const SideCircles = () => {
   return (
     <>
       <div
-        className="absolute -top-28 right-0"
+        className="absolute -top-28 right-0 opacity-25 dark:opacity-10"
         style={{
           background: `radial-gradient(circle closest-corner at center 150px, #FFFFFF, rgba(0,0,0,0)) no-repeat, linear-gradient(220.56deg, #00FEF3 38.97%, #FFFFFF 73.4%)`,
-          opacity: 0.1,
           clipPath: "url(#clip)",
           width: 700,
           height: 1200,
