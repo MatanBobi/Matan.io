@@ -19,7 +19,7 @@ export default function AboutMe(props) {
         </div>
       </div>
       <div className="flex flex-col flex-1 justify-center flex-grow">
-        <h2 className="font-title text-7xl md:text-7xl font-bold md:pr-8 z-10">
+        <h2 className="dark:text-white text-brand-black font-title text-7xl md:text-7xl font-bold md:pr-8 z-10">
           Hello
         </h2>
         <h3 className="text-xl md:text-2xl tracking-tighter font-sans text-brand-dark-grey dark:text-brand-light-grey leading-tight md:pr-8 z-10">

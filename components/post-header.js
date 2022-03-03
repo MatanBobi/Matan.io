@@ -19,7 +19,7 @@ export default function PostHeader({
         </div>
       </div>
       {!hideCoverImage && (
-        <div className="mb-8 md:mb-16 sm:mx-0 p-4 bg-white dark:bg-brand-background rounded-lg border-brand-light-grey dark:border-brand-dark-grey border">
+        <div className="mb-8 md:mb-16 sm:mx-0 p-4 bg-white dark:bg-brand-background rounded-2xl border-brand-light-grey dark:border-brand-dark-grey border">
           <CoverImage
             title={title}
             src={coverImage}
