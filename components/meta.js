@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { HOME_OG_IMAGE_URL } from "../lib/constants";
+import { globals } from "../lib/constants";
 
 export default function Meta() {
   return (
@@ -39,7 +39,7 @@ export default function Meta() {
       <meta name="description" content={`Matan Bobi's personal site`} />
       <meta name="twitter:domain" content="matan.io" />
       <meta name="twitter:creator" content="@matanbobi" />
-      <meta property="og:image" content={HOME_OG_IMAGE_URL} />
+      <meta property="og:image" content={globals.ogImage} />
     </Head>
   );
 }
