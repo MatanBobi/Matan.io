@@ -11,6 +11,7 @@ export default function Layout({ children }) {
       <Meta />
       <div className="min-h-screen bg-white dark:bg-brand-background dark:text-white transition-colors">
         <Header
+          isDarkMode={isDarkMode}
           onClickChangeTheme={() => {
             setIsDarkMode((prevState) => !prevState);
           }}

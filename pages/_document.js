@@ -31,7 +31,7 @@ export default class MyDocument extends Document {
             </>
           )}
         </Head>
-        <body className="font-sans">
+        <body className="font-sans text-brand-black">
           <Main />
           <NextScript />
         </body>

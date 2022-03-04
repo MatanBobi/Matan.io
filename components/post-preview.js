@@ -21,7 +21,7 @@ export default function PostPreview({
           <DateFormatter dateString={date} /> - {readTime.text}
         </div>
         <h3 className="text-2xl font-title font-bold mb-3 leading-snug">
-          <span className="hover:underline">{title}</span>
+          <span>{title}</span>
         </h3>
         <p className="leading-tight mb-4 text-brand-dark-grey dark:text-brand-light-grey font-sans">
           {excerpt}

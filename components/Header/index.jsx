@@ -7,7 +7,7 @@ import { useRouter } from "next/dist/client/router";
 import { HamburgerMenu } from "../HamburgerMenu";
 import { useState } from "react";
 
-export const Header = ({ onClickChangeTheme }) => {
+export const Header = ({ onClickChangeTheme, isDarkMode }) => {
   const completion = useReadingProgress();
   const router = useRouter();
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -41,13 +41,32 @@ export const Header = ({ onClickChangeTheme }) => {
           </ul>
         </nav>
         <div className="ml-auto">
-          <IconButton className="my-6 mx-6" onClick={onClickChangeTheme}>
-            <Image
-              src="/assets/icons/dark-mode.svg"
-              width={24}
-              height={24}
-              alt="Dark mode toggle"
-            />
+          <IconButton
+            className="my-6 mx-6 overflow-hidden relative w-14 h-14"
+            onClick={onClickChangeTheme}
+          >
+            <span
+              className="absolute flex translate-x-16 rotate-180 transition-transform duration-300 origin-center dark:translate-x-0 dark:rotate-0 hover:!rotate-45"
+              aria-hidden={!isDarkMode}
+            >
+              <Image
+                src="/assets/icons/dark-mode.svg"
+                width={24}
+                height={24}
+                alt="Dark mode toggle"
+              />
+            </span>
+            <span
+              className="absolute flex translate-x-0 transition-transform duration-300 rotate-0 origin-center dark:rotate-180 dark:-translate-x-16 hover:!rotate-45"
+              aria-hidden={isDarkMode}
+            >
+              <Image
+                src="/assets/icons/light-mode.svg"
+                width={24}
+                height={24}
+                alt="Light mode toggle"
+              />
+            </span>
           </IconButton>
         </div>
         <div className="block md:hidden scale-35 z-20">

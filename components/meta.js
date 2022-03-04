@@ -40,6 +40,7 @@ export default function Meta() {
       <meta name="twitter:domain" content="matan.io" />
       <meta name="twitter:creator" content="@matanbobi" />
       <meta property="og:image" content={globals.ogImage} />
+      <meta name="twitter:image" content={globals.ogImage} />
     </Head>
   );
 }
