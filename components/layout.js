@@ -3,17 +3,19 @@ import classNames from "classnames";
 import Footer from "../components/footer";
 import Meta from "../components/meta";
 import { Header } from "../components/Header/";
+import { useThemeMode, Theme } from "../hooks/useThemeMode";
 
 export default function Layout({ children }) {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [colorTheme, setTheme] = useThemeMode();
+
   return (
-    <div className={classNames({ dark: isDarkMode })}>
+    <div className={classNames({ dark: colorTheme === Theme.Dark })}>
       <Meta />
       <div className="min-h-screen bg-white dark:bg-brand-background dark:text-white transition-colors">
         <Header
-          isDarkMode={isDarkMode}
+          isDarkMode={colorTheme === Theme.Dark}
           onClickChangeTheme={() => {
-            setIsDarkMode((prevState) => !prevState);
+            setTheme(colorTheme === Theme.Dark ? Theme.Light : Theme.Dark);
           }}
         />
         <main>{children}</main>

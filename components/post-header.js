@@ -9,6 +9,7 @@ export default function PostHeader({
   date,
   readTime,
   hideCoverImage,
+  ogImage,
 }) {
   return (
     <>
@@ -26,6 +27,7 @@ export default function PostHeader({
             height={620}
             width={1240}
           />
+          {ogImage.credit ? <div className="mt-4">{ogImage.credit}</div> : null}
         </div>
       )}
     </>

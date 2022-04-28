@@ -1,0 +1,57 @@
+---
+title: To unit, or integration? That is the question
+excerpt:
+  The way our software is used can infer which type of tests we should write,
+  let's discuss it.
+coverImage: /assets/blog/to-unit-or-integration/banner.jpeg
+date: "2022-04-25T07:04:33.147Z"
+author:
+  name: Matan Borenkraout
+  picture: /assets/blog/authors/matan.jpeg
+ogImage:
+  url: /assets/blog/to-unit-or-integration/banner.jpeg
+  credit: Photo by Iewek Gnos on Unsplash
+draft: false
+---
+
+If you’re using one of the [testing-library](https://testing-library.com/) packages, you’re probably already familiar with the term “implementation details” and why we should not test those. If you’re not familiar with that term, here’s a quick explanation:
+
+<StaticTweet id="977018512689455106" />
+
+Since implementation details aren't something our users see, use or know about, they should not be part of our tests. I want to specifically emphasize one part of this sentence and the types of tests we need to adhere to it.
+
+### The way our software is used
+
+Before talking about "the way our software is used", it's important to understand who are our users.
+
+![We have two users: engineers and clients](/assets/blog/to-unit-or-integration/2.png)
+
+Usually when we think about the way our software is used, we think about our clients, the ones going from page to page, clicking the buttons and filling out forms. We should not forget about the other type of users, our fellow engineers, using the component's API.
+
+![Different usage types, engineers use API (props and callbacks), clients use interactions and view the UI](/assets/blog/to-unit-or-integration/3.png)
+
+In order to resemble the way clients use our software, we should write integration tests that include pages, many components that interact with each other and also not forget to include the "plumbing" (eg. Data providers, Actions, Reducers and many more).  
+I mean, I've never seen an app with one button, have you?
+
+This part of the principal leans hard towards "integration testing is the only valid approach".
+
+What does it mean for unit tests? are they useless? Well, no, they are not.
+
+Our second type of users are engineers, and the way they use our software is entirely different.  
+Let's say we build a `TextField` component. That component will be visible to our clients, but the ones actually using that `TextField` will be our fellow engineers.  
+In order to resemble the way they use our software, we should write unit tests that cover the API of that component.  
+We should render only that component and verify that it works as a standalone while making sure that it succeeds in providing the entire API it promises to its users.
+
+The bottom line is that "shared" components which are widely used within your project by other developers, should be unit tested to verify that their API works perfectly.
+
+### Summary
+
+I decided to write this down because I received this question multiple times as a Testing Library maintainer. Hopefully, you now understand why unit tests are still relevant even if we follow the important principal of "testing our software the way it's used".
+
+Last but not least,  
+I hope everyone's feeling well and keeping themselves safe!  
+If you have any questions, I'm available on [twitter](https://twitter.com/matanbobi).  
+Feel free to ask or comment, I'd love to hear your feedback or help with any dilemmas you have :)
+
+Thanks,  
+Matan.

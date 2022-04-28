@@ -15,6 +15,8 @@ import { components } from "../../components/MDX";
 import { PostFooter } from "../../components/PostFooter";
 import { SideCircles } from "../../components/SideCircles";
 import { PostSeo } from "../../components/PostSocial/PostSeo";
+import Tweet from "../../components/Tweet";
+import { getTweets } from "../../lib/twitter";
 
 export default function Post({ post, preview }) {
   const router = useRouter();
@@ -28,6 +30,11 @@ export default function Post({ post, preview }) {
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
+
+  const StaticTweet = ({ id }) => {
+    const tweet = post.tweets.find((tweet) => tweet.id === id);
+    return <Tweet {...tweet} />;
+  };
 
   return (
     <Layout preview={preview}>
@@ -63,6 +70,7 @@ export default function Post({ post, preview }) {
               <PostHeader
                 title={post.title}
                 coverImage={post.coverImage}
+                ogImage={post.ogImage}
                 date={post.date}
                 readTime={post.readTime}
                 hideCoverImage={post.hideCoverImage}
@@ -70,7 +78,10 @@ export default function Post({ post, preview }) {
               <div className="max-w-3xl mx-auto">
                 {/* TODO: Add special selection color using selection:bg-fuchsia-300 selection:text-fuchsia-900 */}
                 <div className="prose prose-neutral prose-pre:p-0 lg:prose-xl lg:prose-pre:p-0 dark:prose-invert prose-quoteless prose-code:p-0.5 prose-code:rounded prose-code:font-normal prose-code:bg-slate-800 prose-code:bg-opacity-20 dark:prose-code:bg-slate-100 dark:prose-code:bg-opacity-20 lg:prose-h2:text-2xl prose-h2:font-bold">
-                  <MDXRemote {...post.mdxSource} components={components} />
+                  <MDXRemote
+                    {...post.mdxSource}
+                    components={{ ...components, StaticTweet }}
+                  />
                 </div>
               </div>
               <PostFooter
@@ -97,9 +108,12 @@ export async function getStaticProps({ params }) {
     "ogImage",
     "coverImage",
     "hideCoverImage",
+    "tweetIds",
   ]);
 
+  const tweets = await getTweets(post.tweetIds);
   const mdxSource = await serialize(post.content);
+
   const readTime = calculateReadingTime(post.content);
   return {
     props: {
@@ -107,6 +121,7 @@ export async function getStaticProps({ params }) {
         ...post,
         readTime,
         mdxSource,
+        tweets,
       },
     },
   };
