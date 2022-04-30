@@ -8,7 +8,7 @@ export const PostSeo = ({ title, description, coverImage, date, readTime }) => {
       <meta property="og:title" content={title} />
       {description && (
         <>
-          <meta name="Description" content={description} />
+          <meta name="description" content={description} />
           <meta property="og:description" content={description} />
           <meta name="twitter:description" content={description} />
         </>

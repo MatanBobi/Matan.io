@@ -1,7 +1,9 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { globals } from "../lib/constants";
 
 export default function Meta() {
+  const router = useRouter();
   return (
     <Head>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -36,11 +38,15 @@ export default function Meta() {
       <meta name="msapplication-config" content="/favicons/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      <meta name="description" content={`Matan Bobi's personal site`} />
       <meta name="twitter:domain" content="matan.io" />
       <meta name="twitter:creator" content="@matanbobi" />
-      <meta property="og:image" content={globals.ogImage} />
-      <meta name="twitter:image" content={globals.ogImage} />
+      {router.pathname === "/" && (
+        <>
+          <meta name="description" content={`Matan Bobi's personal site`} />
+          <meta property="og:image" content={globals.ogImage} />
+          <meta name="twitter:image" content={globals.ogImage} />
+        </>
+      )}
     </Head>
   );
 }

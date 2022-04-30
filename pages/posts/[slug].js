@@ -66,6 +66,7 @@ export default function Post({ post, preview }) {
                 readTime={post.readTime.text}
                 title={post.title}
                 date={post.date}
+                description={post.excerpt}
               />
               <PostHeader
                 title={post.title}
@@ -105,6 +106,7 @@ export async function getStaticProps({ params }) {
     "slug",
     "author",
     "content",
+    "excerpt",
     "ogImage",
     "coverImage",
     "hideCoverImage",
