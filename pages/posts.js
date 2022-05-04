@@ -39,6 +39,10 @@ export default function Blog({ allPosts }) {
       <Layout>
         <Head>
           <title>Matan.io</title>
+          <meta
+            name="keywords"
+            content="JavaScript, TypeScript, React, Testing, Frontend Engineering, Engineering, Matan Borenkraout Blog"
+          />
         </Head>
         <Container className="my-8">
           <div className="md:w-2/6">

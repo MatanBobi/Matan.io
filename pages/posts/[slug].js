@@ -67,6 +67,7 @@ export default function Post({ post, preview }) {
                 title={post.title}
                 date={post.date}
                 description={post.excerpt}
+                keywords={post.keywords}
               />
               <PostHeader
                 title={post.title}
@@ -111,6 +112,7 @@ export async function getStaticProps({ params }) {
     "coverImage",
     "hideCoverImage",
     "tweetIds",
+    "keywords",
   ]);
 
   const tweets = await getTweets(post.tweetIds);

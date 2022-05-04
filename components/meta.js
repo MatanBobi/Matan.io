@@ -45,6 +45,10 @@ export default function Meta() {
           <meta name="description" content={`Matan Bobi's personal site`} />
           <meta property="og:image" content={globals.ogImage} />
           <meta name="twitter:image" content={globals.ogImage} />
+          <meta
+            name="keywords"
+            content="Matan Borenkraout, React, Frontend, Engineering, JavaScript, TypeScript, Testing, Software Engineering"
+          />
         </>
       )}
     </Head>
