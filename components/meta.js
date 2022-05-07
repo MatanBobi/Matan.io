@@ -43,6 +43,7 @@ export default function Meta() {
       <meta name="twitter:creator" content="@matanbobi" />
       {router.pathname === "/" && (
         <>
+          <meta property="og:url" content="https://matan.io" />
           <meta name="description" content={`Matan Bobi's personal site`} />
           <meta property="og:image" content={globals.ogImage} />
           <meta name="twitter:image" content={globals.ogImage} />

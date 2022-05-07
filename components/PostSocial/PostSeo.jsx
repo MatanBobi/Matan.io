@@ -1,13 +1,6 @@
 import Head from "next/head";
 
-export const PostSeo = ({
-  title,
-  description,
-  coverImage,
-  date,
-  readTime,
-  keywords,
-}) => {
+export const PostSeo = ({ title, description, coverImage, keywords }) => {
   return (
     <Head>
       <title>{title} | Matan.io</title>
