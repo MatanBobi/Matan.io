@@ -28,10 +28,7 @@ export const PostSeo = ({
       {keywords && <meta name="keywords" content={keywords} />}
       <meta name="twitter:title" content={title} />
       <meta name="twitter:image" content={coverImage} />
-      <meta name="twitter:label1" value="Last updated" content="Last updated" />
-      <meta name="twitter:data1" value={date} content={date} />
-      <meta name="twitter:label2" content="Read Time" />
-      <meta name="twitter:data2" content={readTime} />
+      <meta name="image" content={coverImage} />
     </Head>
   );
 };

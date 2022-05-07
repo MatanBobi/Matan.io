@@ -39,6 +39,7 @@ export default function Meta() {
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta name="twitter:domain" content="matan.io" />
+      <meta name="twitter:site" content="@matanbobi" />
       <meta name="twitter:creator" content="@matanbobi" />
       {router.pathname === "/" && (
         <>
