@@ -50,13 +50,24 @@ export default function Post({ post, preview }) {
               passHref
             >
               <div className="flex items-center my-10 cursor-pointer w-max rounded-full py-5 px-7 border-brand-light-grey dark:border-brand-dark-grey border font-bold">
-                <Image
-                  src="/assets/icons/arrow-back.svg"
-                  height={24}
-                  width={24}
-                  alt="All posts"
-                  className="group-hover:-translate-x-1 transition-transform"
-                />
+                <div className="hidden dark:flex">
+                  <Image
+                    src="/assets/icons/arrow-back.svg"
+                    height={24}
+                    width={24}
+                    alt="All posts"
+                    className="group-hover:-translate-x-1 transition-transform"
+                  />
+                </div>
+                <div className="flex dark:hidden">
+                  <Image
+                    src="/assets/icons/arrow-back-light.svg"
+                    height={24}
+                    width={24}
+                    alt="All posts"
+                    className="group-hover:-translate-x-1 transition-transform"
+                  />
+                </div>
                 <span className="mx-2">All posts</span>
               </div>
             </Link>
