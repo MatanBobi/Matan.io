@@ -1,5 +1,5 @@
 ---
-title: To unit, or integration? That is the question
+title: To unit, or not to unit? That is the question
 excerpt:
   The way our software is used can infer which type of tests we should write,
   let's discuss it.
@@ -31,19 +31,21 @@ Usually when we think about the way our software is used, we think about our cli
 
 ![Different usage types, engineers use API (props and callbacks), clients use interactions and view the UI](/assets/blog/to-unit-or-integration/3.png)
 
-In order to resemble the way clients use our software, we should write integration tests that include pages, many components that interact with each other and also not forget to include the "plumbing" (e.g. Data providers, Actions, Reducers and many more).  
+In order to resemble the way clients use our software, we should write [integration tests](https://kentcdodds.com/blog/static-vs-unit-vs-integration-vs-e2e-tests#integration) that include pages, many components that interact with each other and also not forget to include the "plumbing" (e.g. Data providers, Actions, Reducers and many more).  
 I mean, have you ever seen an app with only one button?
 
 This part of the principal leans hard towards "integration testing is the only valid approach".
 
-What does it mean for unit tests? Are they useless? Well, no, they are not.
+What does it mean for [unit tests](https://kentcdodds.com/blog/static-vs-unit-vs-integration-vs-e2e-tests#unit)? Are they useless? Well, no, they are not.
 
 Our second type of users are engineers, and the way they use our software is entirely different.  
 Let's say we build a `TextField` component. That component will be visible to our clients, but the ones actually using that `TextField` will be our fellow engineers.  
 In order to resemble the way they use our software, we should write unit tests that cover the API of that component.  
 We should render only that component and verify that it works as a standalone while making sure that it succeeds in providing the entire API it promises to its users.
 
-The bottom line is that "shared" components which are widely used within your project by other developers, should be unit tested to verify that their API works perfectly.
+The bottom line is that we should understand what's the best way to imitate our user's behavior and leverage our tools accordingly.  
+When we have "shared" components which are widely used within our project by other developers, we should be unit testing them to verify that their API works perfectly.  
+When we have a feature combining multiple components, we should use integration test to verify that this feature works perfectly.
 
 ### Final words
 
