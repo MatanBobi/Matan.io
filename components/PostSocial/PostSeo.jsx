@@ -19,6 +19,7 @@ export const PostSeo = ({ title, description, coverImage, keywords }) => {
     <Head>
       <title>{title} | Matan.io</title>
       <link rel="canonical" href={canonicalURL} />
+      <meta property="og:url" content={canonicalURL} />
       <meta property="og:type" content="article" />
       <meta property="og:title" content={title} />
       {description && (
