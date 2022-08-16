@@ -1,0 +1,44 @@
+---
+title: A tip for an amazing code review
+excerpt: As engineers, we review code on a daily basis. The code review process is something we're used to, but maybe we're underestimating the value it gives us?
+coverImage: /assets/blog/a-tip-for-an-amazing-code-review/banner.jpeg
+date: "2022-08-15T05:35:07.322Z"
+author:
+  name: Matan Borenkraout
+  picture: /assets/blog/authors/matan.jpeg
+ogImage:
+  url: /assets/blog/a-tip-for-an-amazing-code-review/social.jpg
+  credit: Photo by Steven Wright on Unsplash
+keywords: "Teamwork, Engineering, Code Review, Engineering Process"
+---
+
+## Intro
+
+As engineers, we review code on a daily basis. The code review process is something we're used to, but maybe we're underestimating the value it gives us?  
+In code reviews we share our knowledge, we make an impact and most importantly, we create common ownership over our code.  
+Good code review process aims to solve a few pain points, in this post I'll cover the first point in a series of 4 points.
+
+## Building the right thing
+
+Let's say we were constructors (real constructors, with cement and everything 😅) and a new client asked us to build them the house of their dreams.  
+The client described us what they wanted, and we went straight to work.  
+1.5 years later, we shipped them an amazing house:
+
+![The house we built, looks good doesn't it?](/assets/blog/a-tip-for-an-amazing-code-review/house.jpeg)
+
+When our clients entered the house, they were shocked. The house wasn't even close to what they wanted. Too many rooms, they wanted a single floor house and the infinite pool was supposed to to be on the left.  
+Looks like going "straight to production" wasn't a good idea. We could have maybe create a model of the house and verify it satisfies our clients? Maybe even a sketch could work.
+
+Same goes for a pull requests we work on. In order to "get it right the first time" (TM), we should aim to present a clear vision of what we're going to implement and how we're going to implement it.  
+This can either be by presenting the technical design ahead or even creating a draft PR (pull request) with a small prototype. The main thing to remember here is that if we're presenting an early draft or unpolished work, we should notify our reviewer about that (in the PR's description).
+
+![Draft PR in GitHub](/assets/blog/a-tip-for-an-amazing-code-review/draft-pr.png)
+
+Another good approach to verifying we're building the right thing is to enforce tests for every PR. When reviewing the code, starting with the test cases to understand what this PR is covering can be a good approach.
+
+Lastly, when we open the pull request, we should not forget to attach a ticket and describe what we're doing. This will help our reviewer get background about why and what we're trying to solve.
+
+This was a quick tip about code reviews, I'll do my best to continue writing more tips related to code reviews :)  
+If you have any questions, I’m here and also on [Twitter](https://twitter.com/matanbobi).  
+Thanks,  
+Matan.
