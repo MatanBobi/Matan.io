@@ -79,7 +79,7 @@ export default function Post({ post, preview }) {
                 <span className="mx-2">All posts</span>
               </div>
             </Link>
-            <article className="pb-32 relative">
+            <article className="pb-4 relative">
               <PostSeo
                 coverImage={post.ogImage.url}
                 readTime={post.readTime.text}
