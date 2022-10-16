@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, createContext } from "react";
+
+const ThemeContext = createContext();
 
 function useThemeMode() {
   const [theme, setTheme] = useState(
@@ -12,6 +14,7 @@ function useThemeMode() {
   useEffect(() => {
     if (typeof window !== "undefined") {
       localStorage.setItem("theme", theme);
+      document.querySelector("html").setAttribute("data-theme", theme);
     }
   }, [theme]);
 
@@ -23,4 +26,4 @@ const Theme = {
   Light: "light",
 };
 
-export { useThemeMode, Theme };
+export { useThemeMode, Theme, ThemeContext };

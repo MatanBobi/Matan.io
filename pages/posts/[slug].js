@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
@@ -17,16 +17,24 @@ import { SideCircles } from "../../components/SideCircles";
 import { PostSeo } from "../../components/PostSocial/PostSeo";
 import Tweet from "../../components/Tweet";
 import { getTweets } from "../../lib/twitter";
+import { GiscusComments } from "../../components/GiscusComment";
 
 export default function Post({ post, preview }) {
   const router = useRouter();
   const [permalink, setPermalink] = useState("");
+  const [isMounted, setIsMounted] = useState(false);
+
   useEffect(() => {
     const host = window.location.host;
     const baseUrl = `https://${host}`;
 
     setPermalink(`${baseUrl}${router.asPath}`);
   }, [router.asPath]);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
@@ -104,6 +112,7 @@ export default function Post({ post, preview }) {
                 title={post.title}
               />
             </article>
+            {isMounted && <GiscusComments />}
           </>
         )}
       </Container>
