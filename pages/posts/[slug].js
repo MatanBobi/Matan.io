@@ -98,7 +98,7 @@ export default function Post({ post, preview }) {
               />
               <div className="max-w-3xl mx-auto">
                 {/* TODO: Add special selection color using selection:bg-fuchsia-300 selection:text-fuchsia-900 */}
-                <div className="prose prose-neutral prose-pre:p-0 lg:prose-xl lg:prose-pre:p-0 dark:prose-invert prose-quoteless prose-code:p-0.5 prose-code:rounded prose-code:font-normal prose-code:bg-slate-800 prose-code:bg-opacity-20 dark:prose-code:bg-slate-100 dark:prose-code:bg-opacity-20 lg:prose-h2:text-2xl prose-h2:font-bold">
+                <div className="prose prose-neutral prose-a:leading-5 prose-p:relative prose-p:z-0 prose-pre:p-0 lg:prose-xl lg:prose-pre:p-0 dark:prose-invert prose-quoteless prose-code:p-0.5 prose-code:rounded prose-code:font-normal prose-code:bg-slate-800 prose-code:bg-opacity-20 dark:prose-code:bg-slate-100 dark:prose-code:bg-opacity-20 lg:prose-h2:text-2xl prose-h2:font-bold">
                   <MDXRemote
                     {...post.mdxSource}
                     components={{ ...components, StaticTweet }}
