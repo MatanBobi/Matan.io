@@ -15,8 +15,6 @@
 /* Your own custom utilities */
 html {
   scroll-behavior: smooth;
-  block-size: 100%;
-  inline-size: 100%;
 }
 
 label.ham-menu {
