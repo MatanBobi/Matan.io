@@ -1,10 +1,10 @@
-import cn from "classnames";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function CoverImage({ title, src, slug, style }) {
   const image = (
     <Image
+      priority={true}
       src={src}
       alt={`Cover Image for ${title}`}
       className="object-cover rounded-2xl"
