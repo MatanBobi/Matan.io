@@ -38,7 +38,7 @@ export default function Blog({ allPosts }) {
     <>
       <Layout>
         <Head>
-          <title>Matan.io</title>
+          <title>MatanBobi.dev</title>
           <meta
             name="keywords"
             content="JavaScript, TypeScript, React, Testing, Frontend Engineering, Engineering, Matan Borenkraout Blog"

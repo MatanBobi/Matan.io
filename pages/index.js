@@ -15,7 +15,7 @@ export default function Index({ allPosts }) {
     <>
       <Layout>
         <Head>
-          <title>Matan.io</title>
+          <title>MatanBobi.dev</title>
         </Head>
         <Container className="relative">
           <AboutMe />

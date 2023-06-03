@@ -38,12 +38,12 @@ export default function Meta() {
       <meta name="msapplication-config" content="/favicons/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      <meta name="twitter:domain" content="matan.io" />
+      <meta name="twitter:domain" content="matanbobi.dev" />
       <meta name="twitter:site" content="@matanbobi" />
       <meta name="twitter:creator" content="@matanbobi" />
       {router.pathname === "/" && (
         <>
-          <meta property="og:url" content="https://matan.io" />
+          <meta property="og:url" content="https://matanbobi.dev" />
           <meta name="description" content={`Matan Bobi's personal site`} />
           <meta property="og:image" content={globals.ogImage} />
           <meta name="twitter:image" content={globals.ogImage} />
