@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: process.env.SITE_URL || "https://matabobi.dev",
+  siteUrl: process.env.SITE_URL || "https://matanbobi.dev",
   generateRobotsTxt: true,
   generateIndexSitemap: false,
 };
