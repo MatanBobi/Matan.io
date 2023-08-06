@@ -17,7 +17,7 @@ export const PostSeo = ({ title, description, coverImage, keywords }) => {
 
   return (
     <Head>
-      <title>{title} | MatanBobi.dev</title>
+      <title>{title} | Matan Borenkraout</title>
       <meta property="og:url" content={canonicalURL} />
       <meta property="og:type" content="article" />
       <meta property="og:title" content={title} />
