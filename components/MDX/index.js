@@ -1,5 +1,6 @@
 import { MarkdownCodeBlock } from "./MarkdownCodeBlock";
 import { MarkdownImage } from "./MarkdownImage";
+import ExternalLink from "../../public/assets/icons/external-link.svg";
 
 const Link = (props) => {
   return (
@@ -9,7 +10,8 @@ const Link = (props) => {
       target="_blank"
       rel="noopener noreferrer"
     >
-      {props.children}
+      {props.children}{" "}
+      <ExternalLink role="presentation" className="m-1 h-5 w-5" />
     </a>
   );
 };
