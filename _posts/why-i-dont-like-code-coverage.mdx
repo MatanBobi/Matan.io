@@ -21,12 +21,12 @@ In large codebases, it's common to set a coverage threshold that must be met bef
 
 Let's explore the pros of code coverage tools and why people use them.
 
-## The pros
+## The benefits
 
 1. Enforces Testing: If your team isn’t accustomed to writing tests, setting a coverage threshold that blocks pull requests (PRs) if not met can enforce the practice of writing tests for every piece of code.
 2. Compliance: Some organizations use coverage metrics to ensure that applications are sufficiently tested before reaching production.
 3. Boosts Confidence: High code coverage can create a sense of assurance that the application is well-tested.
-4. Catching Bugs: Sometimes, code coverage can help identify bugs.
+4. Catching Bugs: In some cases, code coverage tools can act as "training wheels" for beginners - a way to verify that each line of code is covered and therefor catch bugs.
 
 After seeing the pros of code coverage, let me ask you a question. What do you think is the coverage score for this block?
 
@@ -46,23 +46,22 @@ In the example above, as our `App` component contains only JSX, 100% of our code
 But does that give you any **confidence** that the `App` component **behaves** as it should?
 
 Returning to our car inspection analogy, imagine we visit a new garage where the mechanics lack proper training. They give the brakes only a cursory look, failing to test them thoroughly. Although they mark the brakes as inspected and in good condition, the brakes could still fail at a crucial moment. Similarly, high code coverage might show that many parts of your code are executed during tests, but it doesn’t ensure that the tests are thorough or that critical functionality is adequately verified.  
-With that in mind, let's look at the downsides.
+With that in mind, let's try to understand why I think the benefits listed above aren't beneficial.
 
-## The cons
+## The dark side of the pros
 
 I believe code coverage tools are generally not worth the effort, and here’s why the supposed benefits might not be as valuable as you think:
 
 1. Enforces Testing: Enforcing tests is more about fostering a strong development culture. A coverage metric might lead to a counterproductive mindset where developers aim to “satisfy” the threshold without seeing the real value in testing, causing them to dislike the process.
 2. Compliance: While numbers can drive decisions, the metrics provided by code coverage tools can be misleading. For example, what does 90% coverage really mean? If the remaining 10% could cause significant bugs, is it acceptable to leave it untested?
 3. Boosts Confidence: True confidence comes from testing the application the way users interact with it. As demonstrated earlier, simply rendering a component can achieve 100% coverage without actually verifying any user-facing behavior or interactions.
-4. Catching Bugs: While it's true that code coverage tools can help catch bugs, they can also lead to a false sense of security. Believing that 90% coverage is “enough” might make us overlook critical issues.
+4. Catching Bugs: While it's true that code coverage tools can help catch bugs, they can also lead to a false sense of security. Believing that 90% coverage is “enough” might make us overlook critical issues. Returning to the "training wheels" analogy, even though they can help you find issues, using "training wheels" will probably mean you're going slower or working harder to reach the same velocity.
 
 If confidence is what we're looking for, instead of relying on code coverage metrics, consider focusing on test quality - write meaningful tests that reflect how users interact with your application.
 
 ## Summary
 
-In summary, I wouldn’t recommend relying heavily on code coverage tools in a project. They can create a false sense of security and might not provide the value you expect. Instead, focus on writing high-quality tests, understanding user behavior, and adopting best practices that ensure code reliability.  
-If your project enforces code coverage, I'd love to hear your thoughts and experiences—whether you find it beneficial or not.  
-I’m here and also on [X](https://x.com/matanbobi).  
+In summary, I wouldn’t recommend relying heavily on code coverage tools in a project. They can create a false sense of security and might not provide the value you expect. Instead, focus on writing high-quality tests, understanding user behavior, and adopting best practices and good dev culture that ensure code reliability.
+If your project enforces code coverage, I'd love to hear your thoughts and experiences—whether you find it beneficial or not. I’m here and also on [X](https://x.com/matanbobi).  
 Until next time 👋  
 Thanks, Matan.
