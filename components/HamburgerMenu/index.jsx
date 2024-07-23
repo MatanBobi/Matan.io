@@ -14,3 +14,4 @@ export const HamburgerMenu = ({ onChange, value }) => {
     </label>
   );
 };
+

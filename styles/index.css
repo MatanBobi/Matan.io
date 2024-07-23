@@ -42,26 +42,5 @@ label.ham-menu span {
 
 a.markdown-link {
   position: relative;
-  display: inline-block;
-}
-
-a.markdown-link:hover::before {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
-a.markdown-link::before {
-  content: " ";
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  inset: 0 0 0 0;
-  background: #00adb5;
-  z-index: -1;
-  transition: transform 0.3s ease;
-  transform: scaleX(0);
-  transform-origin: bottom right;
+  display: inline-flex;
 }
