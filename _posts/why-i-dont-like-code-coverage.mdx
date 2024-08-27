@@ -1,5 +1,5 @@
 ---
-title: Why I don't like code coverage
+title: The Harmful Misuse of Code Coverage
 excerpt: Code coverage is a tool widely used to understand if we wrote enough tests. But is it really the best tool to give us the confidence we need?
 coverImage: /assets/blog/why-i-dont-like-code-coverage/banner.webp
 date: "2024-07-20T12:30:02.322Z"
@@ -14,7 +14,7 @@ keywords: "Code coverage, Tests, Coverage, Frontend Testing"
 
 ## What's code coverage?
 
-Code coverage is a metric used in software development to measure how much of your code is tested. It breaks down into four components: **Statements**, **Branches**, **Functions**, and **Lines**. Each component gives you a score that indicates how thoroughly your code is tested.
+Code coverage is a metric used in software development. It helps us with measuring how much of our code is tested. It breaks down into four components: **Statements**, **Branches**, **Functions**, and **Lines**. Each component gives you a score that indicates how thoroughly your code is tested.
 
 You can think of code coverage like a car inspection. Imagine you take your car for an inspection, and the mechanic checks the tires, brakes, and lights. If they didn't check the engine, you'll get 75% coverage score (don't test me on my car manufacturing skills please!).  
 In large codebases, it's common to set a coverage threshold that must be met before new code can be pushed to the main branch. So if you'll want to push a new feature to your car - let's say a multimedia system without it being tested, you'll now get 60% coverage score so you won't be able to add this functionality.
@@ -41,7 +41,8 @@ test("renders App component", () => {
 Is it 10? 20? 50? 100?
 
 Well, in this case, the coverage score is 100%. The reason for that lies in the way coverage tools calculate the score.  
-To calculate the score, code coverage tools identify which lines of the code are run as part of our `test` block.
+To calculate the score, code coverage tools identify which lines of the code **run** as part of our `test` block.  
+If we go back to our car mechanic analogy, one mechanic might do a good job and actually test that the breaks are working and another mechanic might just briefly look to see that they are there. Both will result in the same coverage score.
 In the example above, as our `App` component contains only JSX, 100% of our code runs when we call `render`.
 But does that give you any **confidence** that the `App` component **behaves** as it should?
 
@@ -61,7 +62,9 @@ If confidence is what we're looking for, instead of relying on code coverage met
 
 ## Summary
 
-In summary, I wouldn’t recommend relying heavily on code coverage tools in a project. They can create a false sense of security and might not provide the value you expect. Instead, focus on writing high-quality tests, figuring out the [purpose of your tests](https://www.epicweb.dev/the-true-purpose-of-testing), understanding user behavior, ignoring [implementation details](https://kentcdodds.com/blog/testing-implementation-details) and adopting best practices and good dev culture that ensure code reliability.  
+In summary, I do believe that code coverage can be useful, if you use it correctly. Setting a coverage threshold is not the way to do it.  
+Using it to see if we've missed a part of our code in our tests can be beneficial.
+That's why I wouldn’t recommend relying on code coverage thresholds in a project. They can create a false sense of confidence and might not provide the value you expect. Instead, focus on writing high-quality tests, figuring out the [purpose of your tests](https://www.epicweb.dev/the-true-purpose-of-testing), understanding user behavior, ignoring [implementation details](https://kentcdodds.com/blog/testing-implementation-details) and adopting best practices and good dev culture that ensure code reliability.  
 If your project enforces code coverage, I'd love to hear your thoughts and experiences—whether you find it beneficial or not. I’m here and also on [X](https://x.com/matanbobi).  
 Until next time 👋  
 Thanks, Matan.
