@@ -25,7 +25,7 @@ export const Header = ({ onClickChangeTheme, isDarkMode }) => {
           />
         </div>
       )}
-      <header className="flex justify-between relative z-20 md:justify-start">
+      <header className="flex px-4 justify-between items-center relative z-20 md:justify-start">
         <Link href="/" passHref>
           <a>
             <Logo />
@@ -40,9 +40,9 @@ export const Header = ({ onClickChangeTheme, isDarkMode }) => {
             <li className="my-11 mx-6">Contact</li> */}
           </ul>
         </nav>
-        <div className="ml-auto">
+        <div className="md:ml-auto">
           <IconButton
-            className="my-6 mx-6 overflow-hidden relative w-14 h-14"
+            className="md:my-6 md:mx-6 overflow-hidden relative w-14 h-14"
             onClick={onClickChangeTheme}
           >
             <span
@@ -69,7 +69,7 @@ export const Header = ({ onClickChangeTheme, isDarkMode }) => {
             </span>
           </IconButton>
         </div>
-        <div className="block md:hidden scale-35 z-20">
+        <div className="block md:hidden z-20">
           <div className="m-6">
             <HamburgerMenu
               onChange={() => setMenuOpen((prevValue) => !prevValue)}
@@ -81,7 +81,7 @@ export const Header = ({ onClickChangeTheme, isDarkMode }) => {
           <div className="fixed z-10 md:hidden inset-0 bg-white dark:bg-brand-background text-white">
             <nav className="flex flex-col">
               <Link href="/" passHref>
-                <a>
+                <a className="m-4">
                   <Logo />
                 </a>
               </Link>
