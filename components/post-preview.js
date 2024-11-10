@@ -18,7 +18,7 @@ export default function PostPreview({
           <CoverImage slug={slug} title={title} src={coverImage} />
         </div>
         <div className="text-brand-dark-grey dark:text-brand-light-grey my-2">
-          <DateFormatter dateString={date} /> - {readTime.text}
+          <DateFormatter dateString={date} /> · {readTime.text}
         </div>
         <h3 className="text-2xl font-title font-bold mb-3 leading-snug">
           <span>{title}</span>
