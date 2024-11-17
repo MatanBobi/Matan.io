@@ -83,7 +83,8 @@ function Form() {
 	); 
 };
 ```
-We’ve changed the state management mechanism, but now the `Input` component’s logic—designed around `useState`—no longer works. This is where abstraction leaks become a problem.
+We’ve changed the state management mechanism, but now the `Input` component’s logic—designed around `useState`—no longer works.  
+Should we now pass the `dispatch` function to the `Input` component and let it dispatch the specific action? This is exactly where abstraction leaks become a problem.
 
 ## Abstraction Leak
 An **abstraction leak** occurs when a component knows too much about the internal implementation of another component. In this case, the `Input` component assumes:
