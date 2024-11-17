@@ -1,0 +1,144 @@
+---
+title:  "React Anti-Pattern: Stop Passing Setters Down the Components Tree"
+excerpt: Let's see why passing `useState` setters as props creates abstraction leaks and tightly couples child components to parent implementations.
+coverImage: /assets/blog/stop-passing-setter-functions-to-components/banner.webp
+date: "2024-11-17T23:01:02.322Z"
+author:
+  name: Matan Borenkraout
+  picture: /assets/blog/authors/matan.jpeg
+ogImage:
+  url: /assets/blog/stop-passing-setter-functions-to-components/social.png
+  credit: Photo by Daan Mooij on unsplash
+keywords: "React, React Anti-Patterns, useState, State Management, Abstraction Leak, React Setters, Component Props, Clean Code, Reusability, React Best Practices"
+---
+Before diving in, I have a quick challenge for you. If you're using TypeScript, search your codebase for this partial type definition: `React.Dispatch<React.SetStateAction`. If you find occurrences in your component props, drop the count in a comment below—because chances are, you're dealing with an abstraction leak.
+In this post, I’ll explain what abstraction leaks are, why they matter, and how to fix them—using a real-world example.
+## Intro
+Recently, I’ve come across some patterns in React projects that raised red flags for me. Let’s look at one of those patterns: passing `useState` setters as props.
+
+Here’s a typical example:
+```jsx
+// Form.jsx 
+function Form() { 
+	const [formData, setFormData] = useState({ name: '' }); 
+	return (
+		<div>
+			<h1>Form</h1> 
+			{/* Pass the setter function down to ChildComponent */}
+			<Input name={formData.name} setFormData={setFormData} />
+			<button onClick={() => console.log(formData)}>Submit</button> 
+		</div> 
+	); 
+};
+
+// Input.jsx
+function Input({ name, setFormData }) { 
+	const handleInputChange = (event) => { 
+		// Directly using the setFormData setter function from the parent
+		setFormData((prevData) => ({ ...prevData, name: event.target.value })); 
+	}; 
+	
+	return ( 
+		<div>
+			<label> 
+				Name: 
+				<input type="text" value={name} onChange={handleInputChange} /> 
+			</label>
+		</div> 
+	); 
+};
+```
+This code works fine—for now. But let’s dig deeper into why this approach can cause problems as the project evolves.
+
+## The evolution of code
+Suppose we need to enhance our form. More fields are added, error handling is introduced, and the logic grows more complex. To manage this, we decide to switch from `useState` to `useReducer`.
+Here’s what the refactored `Form` component looks like:
+```jsx
+function reducer(state, action) { 
+	switch(action.type) {
+		case 'setField': 
+			return { 
+				...state, 
+				[action.payload.fieldName]: action.payload.fieldValue 
+			};
+		case 'setError':
+			return {
+				...state,
+				error: action.payload.error
+			}
+		default:
+			return state;
+	}
+}
+
+function Form() {  
+	const [formData, dispatch] = useReducer(reducer, { name: '', error: null });
+	return (
+		<div>
+			<h1>Form</h1> 
+			{/* What happens to setFormData now? */}
+			<Input name={formData.name} setFormData={setFormData} />
+			<button onClick={() => console.log(formData)}>Submit</button> 
+		</div> 
+	); 
+};
+```
+We’ve changed the state management mechanism, but now the `Input` component’s logic—designed around `useState`—no longer works. This is where abstraction leaks become a problem.
+
+## Abstraction Leak
+An **abstraction leak** occurs when a component knows too much about the internal implementation of another component. In this case, the `Input` component assumes:
+
+1. The parent component is using `useState`.
+2. The state contains a `name` field directly, alongside other data.
+3. The parent will always maintain the same state structure.
+
+These assumptions make the child component tightly coupled to the parent, so any change in the parent’s state structure or management mechanism requires updates to the child.
+
+### Why is that so bad?
+- **Fragility**: Changes to the parent’s logic break the child component, creating a maintenance headache.
+- **Reduced Reusability**: The child is tied to a specific parent implementation, limiting its use in other contexts.
+- **Loss of Clarity**: Passing raw `setState` makes it unclear what the child component is supposed to modify.
+
+## How do we solve the leak?
+Solving the abstraction leak in this case is extremely simple. The `Input` component doesn't need to accept a prop with the actual setter function. It can get a callback function that encapsulates the state change for it. For example, a function named `handleNameChange`.
+
+```jsx
+// Form.jsx 
+function Form() { 
+	const [formData, setFormData] = useState({ name: '' }); 
+	const handleNameChange = (name) => { 
+		setFormData((prevState) => {...prevState, name});
+	};
+	
+	return (
+		<div>
+			<h1>Form</h1> 
+			{/* Pass the setter function down to Input */}
+			<Input name={formData.name} onChange={handleNameChange} />
+			<button onClick={() => console.log(formData)}>Submit</button> 
+		</div> 
+	); 
+};
+
+// Input.jsx 
+function Input({ name, onChange }) { 
+	const handleInputChange = (event) => { 
+		onChange(event.target.value);
+	}; 
+	
+	return ( 
+		<div>
+			<label> 
+				Name: 
+				<input type="text" value={name} onChange={handleInputChange} /> 
+			</label>
+		</div> 
+	); 
+};
+```
+
+## Summary
+In this post, we've discussed why passing the setter function of a `useState` as a prop is not a good practice. By doing that, we tightly couple the child component to the parent’s implementation and lead to an abstraction leak. Instead, we showed how using an encapsulated callback function improves clarity, reusability, and maintainability.
+Don't forget to write down the number of occurrences you found!
+Thanks!
+Matan.
