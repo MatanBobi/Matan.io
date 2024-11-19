@@ -16,7 +16,9 @@ In this post, I’ll explain what abstraction leaks are, why they matter, and ho
 ## Intro
 Recently, I’ve come across some patterns in React projects that raised red flags for me. Let’s look at one of those patterns: passing `useState` setters as props.
 
-Here’s a typical example:
+Here's a typical example:
+> The following example uses form components purely for illustration purposes; the concepts apply universally and are not tied to the specifics of form handling.
+
 ```jsx
 // Form.jsx 
 function Form() { 
