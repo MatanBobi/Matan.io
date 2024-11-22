@@ -110,7 +110,7 @@ Solving the abstraction leak in this case is extremely simple. The `Input` compo
 function Form() { 
 	const [formData, setFormData] = useState({ name: '' }); 
 	const handleNameChange = (name) => { 
-		setFormData((prevState) => {...prevState, name});
+		setFormData((prevState) => ({...prevState, name}));
 	};
 	
 	return (
