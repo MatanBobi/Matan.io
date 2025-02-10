@@ -27,18 +27,21 @@ export default function Meta() {
       <meta name="twitter:domain" content="matanbobi.dev" />
       <meta name="twitter:site" content="@matanbobi" />
       <meta name="twitter:creator" content="@matanbobi" />
-      {router.pathname === "/" && (
+      {router.pathname === "/" ? (
         <>
-          <meta property="og:url" content="https://matanbobi.dev" />
-          <meta name="description" content={`Matan Bobi's personal site`} />
+          <link rel="canonical" href={globals.siteUrl}></link>
+          <meta property="og:url" content={globals.siteUrl} />
+          <meta name="description" content={globals.description} />
           <meta property="og:image" content={globals.ogImage} />
+          <title>{globals.title}</title>
           <meta name="twitter:image" content={globals.ogImage} />
           <meta
             name="keywords"
             content="Matan Borenkraout, React, Frontend, Engineering, JavaScript, TypeScript, Testing, Software Engineering"
           />
         </>
-      )}
+      ) : null}
+      <meta name="author" content="Matan Borenkraout" />
     </Head>
   );
 }
