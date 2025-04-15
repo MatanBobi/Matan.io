@@ -19,7 +19,7 @@ export default function Index({ allPosts }) {
         </Head>
         <Container className="relative">
           <AboutMe />
-          <SideCircles />
+          {/* <SideCircles /> */}
         </Container>
         <Container>
           <Intro />

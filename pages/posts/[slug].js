@@ -46,7 +46,7 @@ export default function Post({ post, preview }) {
 
   return (
     <Layout preview={preview}>
-      <SideCircles />
+      {/* <SideCircles /> */}
       <Container className="max-w-4xl">
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
