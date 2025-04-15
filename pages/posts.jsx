@@ -6,13 +6,13 @@ import MoreStories from "../components/more-stories";
 import Layout from "../components/layout";
 import { getAllPosts } from "../lib/api";
 import { Input } from "../components/Input";
-import { Tag } from "../components/Tags";
+import { Tag } from "../components/Tag";
 
 export default function Blog({ allPosts }) {
   const router = useRouter();
   const [filter, setFilter] = useState("");
 
-  
+
   const allTags = [
     ...new Set(allPosts.flatMap((post) => post.tags || [])),
   ].sort();
@@ -78,7 +78,7 @@ export default function Blog({ allPosts }) {
         <Container className="my-8">
           <div className="flex flex-col gap-8">
             <div className="flex flex-col md:flex-row gap-4 items-center">
-              <div className="md:w-2/6">
+              <div className="w-full md:w-2/6">
                 <Input
                   value={filter}
                   onChange={(value) => {

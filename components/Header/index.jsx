@@ -46,7 +46,7 @@ export const Header = ({ onClickChangeTheme, isDarkMode }) => {
             onClick={onClickChangeTheme}
           >
             <span
-              className="absolute flex translate-x-16 rotate-180 transition-transform duration-300 origin-center dark:translate-x-0 dark:rotate-0 hover:!rotate-45"
+              className="absolute flex translate-x-16 rotate-180 transition-transform duration-300 origin-center dark:translate-x-0 dark:rotate-0 hover:rotate-45!"
               aria-hidden={!isDarkMode}
             >
               <Image
@@ -57,7 +57,7 @@ export const Header = ({ onClickChangeTheme, isDarkMode }) => {
               />
             </span>
             <span
-              className="absolute flex translate-x-0 transition-transform duration-300 rotate-0 origin-center dark:rotate-180 dark:-translate-x-16 hover:!rotate-45"
+              className="absolute flex translate-x-0 transition-transform duration-300 rotate-0 origin-center dark:rotate-180 dark:-translate-x-16 hover:rotate-45!"
               aria-hidden={isDarkMode}
             >
               <Image
