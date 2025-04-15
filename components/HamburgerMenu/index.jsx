@@ -7,6 +7,7 @@ export const HamburgerMenu = ({ onChange, value }) => {
         id="check"
         onChange={onChange}
         value={value}
+        role="menuitem"
       />
       <span className="bg-brand-background dark:bg-white w-2/4 peer-checked:origin-bottom"></span>
       <span className="bg-brand-background dark:bg-white w-full peer-checked:origin-top"></span>
@@ -14,4 +15,3 @@ export const HamburgerMenu = ({ onChange, value }) => {
     </label>
   );
 };
-

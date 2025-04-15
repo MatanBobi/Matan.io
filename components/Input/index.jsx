@@ -1,4 +1,11 @@
-export const Input = ({ children, onChange, value, disabled, placeholder }) => {
+export const Input = ({
+  children,
+  onChange,
+  value,
+  disabled,
+  placeholder,
+  role,
+}) => {
   const onChangeWrapper = (e) => {
     if (onChange) {
       onChange(e.target.value);
@@ -12,6 +19,7 @@ export const Input = ({ children, onChange, value, disabled, placeholder }) => {
       className="rounded-full w-full py-5 px-7 border-brand-light-grey bg-white dark:border-brand-dark-grey dark:bg-brand-background border font-bold transition-all"
       disabled={disabled}
       placeholder={placeholder}
+      role={role}
     />
   );
 };

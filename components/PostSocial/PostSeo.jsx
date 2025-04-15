@@ -37,6 +37,9 @@ export const PostSeo = ({ title, description, coverImage, keywords }) => {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:image" content={`${globals.siteUrl}${coverImage}`} />
       <meta name="image" content={`${globals.siteUrl}${coverImage}`} />
+      <meta name="robots" content="index, follow" />
+      <link rel="canonical" href={canonicalURL} />
+      <meta name="author" content="Matan Borenkraout" />
     </Head>
   );
 };

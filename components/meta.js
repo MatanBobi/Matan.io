@@ -42,6 +42,7 @@ export default function Meta() {
         </>
       ) : null}
       <meta name="author" content="Matan Borenkraout" />
+      <meta name="robots" content="index, follow" />
     </Head>
   );
 }
