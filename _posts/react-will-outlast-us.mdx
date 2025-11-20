@@ -13,7 +13,7 @@ tags: ["React", "JavaScript"]
 ---
 
 I've been writing React code for almost a decade now. I've seen every cycle of panic, backlash, and "React is dead" prediction, honestly it made me tired.  
-But we've hit an inflection point, and it has nothing to do with the new `Activity` component or the long awaited React Compiler.  
+But we've hit an inflection point, and it has nothing to do with the new `Activity` component or the long awaited React Compiler.
 
 I'm here to say: React has won because of something outside the React core team's control.  
 And now, it won't just be hard to dethrone — it will practically be impossible.
@@ -21,6 +21,7 @@ And now, it won't just be hard to dethrone — it will practically be impossible
 ## Why did React win the battle up until 2024?
 
 When you ask people why React has won, they'll probably mention the following three:
+
 - Ecosystem - React has a very large community (sub-reddit with almost 200k people) and a near infinite amount of companion libraries and meta frameworks (from component libraries to state management, Next.js and many more).
 - Job market - The job market favors React engineers in somewhat of a vicious cycle, companies are looking for React engineers because they build apps with React and the cycle goes on where bootcamps only teach React.
 - Simplicity - People tend to think that React's mental model is easy to grasp even for beginners.
@@ -40,12 +41,18 @@ I know, npm numbers may be inflated by CI/CD, but the trend is real: React is no
 ![React on NPM trends](/assets/blog/react-will-outlast-us/react-trends.webp)
 
 Lovable for example, clearly state that they chose react because:
+
 > Lovable leverages React for several reasons, the most important being its popularity and ecosystem. React is the most widely adopted front-end library, with a vast developer community and extensive third-party support. This means that almost any UI challenge can be solved using existing React packages, saving time and effort in development.
 
 Which makes real sense, just as we mentioned in the section above, but then, they also say this:
+
 > large language models (LLMs) trained on code repositories can generate high-quality React code due to its dominance in online resources.
 
-This is where the actual gold is. We've reached a point where LLMs favor React because they saw it so many times in their training data (be it tutorials, repos, boilerplates, blog posts etc). Leading to another vicious cycle of creating more and more React applications.
+This is where the actual gold is. We've reached a point where LLMs favor React because they saw it so many times in their training data (be it tutorials, repos, boilerplates, blog posts etc). Leading to another vicious cycle of creating more and more React applications.  
+Let's play a little game, I've tried the following prompt in ChatGPT, Gemini, Claude and Copilot: "Generate a UI for a todo app". Want to guess how many of them used React?  
+You're right, 3/3 - All three models defaulted to React as the framework of choice. None of them chose Angular, Vue, Svelte, or plain HTML and JS.  
+If we'll look in StackOverflow, questions tagged with React (reactjs) are currently around 477k where Angular is at 300k Vue is at 100k and Svelte is only at around 6k.
+Another data point can be taken from GitHub, where React has 29.8M dependant projects, Angular has 4M, Svelte has 400k.
 There's just no way to undo that.
 
 ## The Momentum Problem
@@ -53,6 +60,7 @@ There's just no way to undo that.
 Every new framework (hello Remix 3.0) faces an impossible barrier:  
 LLMs won't recommend, structure, or generate quality patterns for a tool that hasn't reached massive adoption. And they can't reach massive adoption **without** LLM amplification.
 Here's a quote taken from Reddit in regards to Svelte 5:
+
 > Most of them still don't get Svelte 5. … they either spit out old Svelte … or mess up the new syntax completely.
 
 I know, you can enrich context with MCP (Context7) or tool-specific docs, but that only gets you so far. It doesn't change the underlying training-weight reality: React occupies far more of the internet's code corpus than anything else.
@@ -62,7 +70,6 @@ It will outlast every other frontend framework — even though the React team st
 
 ## What This Means for Engineers
 
-You might not like to hear it, but even if you don't like React, it's here to stay.  
-Staying sharp with React will continue to compound your career value moving forward.
+TODO: Finish this section
 
 If you have any questions, reach out here or on [X](https://x.com/matanbobi).
