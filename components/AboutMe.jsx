@@ -28,7 +28,7 @@ export default function AboutMe(props) {
         <h3 className="text-xl md:text-2xl tracking-tighter font-sans text-brand-dark-grey dark:text-brand-light-grey leading-tight md:pr-8 z-10">
           <div>Nice to meet you 👋</div>
           <div className="mb-6 z-10">
-            I&apos;m Matan Borenkraout - a Frontend Engineer, speaker & blogger.
+            I&apos;m Matan Borenkraout - a Software Engineer, speaker & blogger.
           </div>
           Making better software, one word at a time 🔥
         </h3>
