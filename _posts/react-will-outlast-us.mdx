@@ -40,21 +40,25 @@ I know, npm numbers may be inflated by CI/CD, but the trend is real: React is no
 
 ![React on NPM trends](/assets/blog/react-will-outlast-us/react-trends.webp)
 
-Lovable, for example, clearly states that they chose React because:
+Lovable say they picked React because:
 
-> Lovable leverages React for several reasons, the most important being its popularity and ecosystem. React is the most widely adopted front-end library, with a vast developer community and extensive third-party support. This means that almost any UI challenge can be solved using existing React packages, saving time and effort in development.
+> React is the most widely adopted front-end library, with a vast developer community and extensive third-party support. This means that almost any UI challenge can be solved using existing React packages, saving time and effort in development.
 
-Fine - expected. Then comes the more important line:
+Sure - expected. Then comes the more important line:
 
 > large language models (LLMs) trained on code repositories can generate high-quality React code due to its dominance in online resources.
 
-This is the real story.  
+That's the real story.
+
 We've reached a point where LLMs favor React because they saw it so many times in their training data (be it tutorials, repos, boilerplates, blog posts, etc.), leading to another vicious cycle of creating more and more React applications.  
-Let's play a little game. I tried the following prompt in ChatGPT, Gemini, Claude, and Copilot: "Generate a UI for a todo app." Want to guess how many of them used React?  
+Let's play a little game. I tried the following prompt in ChatGPT, Gemini, and Claude: "Generate a UI for a todo app." Want to guess how many of them used React?  
 You're right, 3/3 - all three models defaulted to React as the framework of choice. None of them chose Angular, Vue, Svelte, or plain HTML and JS.
-Looking at the results of the [State of JS survey from 2024](https://2024.stateofjs.com/en-US/libraries/front-end-frameworks/), we can see React leading in usage at 82%. Far behind, in second place, is Vue with 51% (!) and Angular with 50%.  
-If we look on Stack Overflow, questions tagged with React (`reactjs`) are currently around 477k, where Angular is at 300k, Vue is at 100k, and Svelte is only at around 6k.  
-Another data point can be taken from GitHub, where React has 29.8M dependent projects, Angular has 4M, and Svelte has 400k.
+
+The underlying data matches this:
+
+- **State of JS 2024**: React at 82% usage; Vue and Angular far behind (51%, 50%).
+- **StackOverflow**: ~477k React questions; ~300k Angular; ~100k Vue; ~6k Svelte.
+- **GitHub dependents**: React ~29.8M; Angular ~4M; Svelte ~0.4M.
 
 There's just no way to undo that.
 
@@ -70,7 +74,7 @@ For example, here's a quote taken from Reddit in regards to Svelte 5:
 I know, you can enrich context with MCP (Context7) or tool-specific docs, but that only gets you so far. It doesn't change the underlying training-weight reality: React occupies far more of the internet's code corpus than anything else.
 
 React isn't going anywhere.  
-It will outlast every other frontend framework - even though the React team still claims it's not a framework.
+Not because it's perfect or because the team made all the right calls — but because AI locked React into a feedback loop that compounds faster than competitors can catch up.
 
 If you have any questions or want to continue this debate, feel free to comment here or reach out on [X](https://x.com/matanbobi).
 
