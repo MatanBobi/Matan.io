@@ -2,6 +2,7 @@ import Avatar from "../components/avatar";
 import DateFormatter from "../components/date-formatter";
 import CoverImage from "./cover-image";
 import Link from "next/link";
+import ViewCounter from "./ViewCounter";
 
 export default function PostPreview({
   title,
@@ -16,8 +17,8 @@ export default function PostPreview({
       <div className="mb-2 overflow-hidden">
         <CoverImage title={title} src={coverImage} />
       </div>
-      <div className="text-brand-dark-grey dark:text-brand-light-grey my-2">
-        <DateFormatter dateString={date} /> · {readTime.text}
+      <div className="text-brand-dark-grey dark:text-brand-light-grey my-2 flex items-center gap-2">
+        <DateFormatter dateString={date} /> · {readTime.text} · <ViewCounter slug={slug} incrementOnMount={false} />
       </div>
       <h3 className="text-2xl font-title font-bold mb-3 leading-snug">
         <span>{title}</span>
