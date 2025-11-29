@@ -26,10 +26,8 @@ export const Header = ({ onClickChangeTheme, isDarkMode }) => {
         </div>
       )}
       <header className="flex px-4 justify-between items-center relative z-20 md:justify-start">
-        <Link href="/" passHref>
-          <a>
-            <Logo />
-          </a>
+        <Link href="/">
+          <Logo />
         </Link>
         <nav className="hidden md:flex">
           <ul className="flex font-bold text-lg">
@@ -80,10 +78,8 @@ export const Header = ({ onClickChangeTheme, isDarkMode }) => {
         {isMenuOpen && (
           <div className="fixed z-10 md:hidden inset-0 bg-white dark:bg-brand-background text-white">
             <nav className="flex flex-col">
-              <Link href="/" passHref>
-                <a className="m-4">
-                  <Logo />
-                </a>
+              <Link href="/" className="m-4">
+                <Logo />
               </Link>
               <ul className="flex flex-col font-bold text-2xl">
                 <li className="my-11 mx-auto border-b">
