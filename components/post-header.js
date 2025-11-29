@@ -2,6 +2,7 @@ import Avatar from "../components/avatar";
 import DateFormatter from "../components/date-formatter";
 import CoverImage from "../components/cover-image";
 import PostTitle from "../components/post-title";
+import ViewCounter from "../components/ViewCounter";
 
 export default function PostHeader({
   title,
@@ -10,13 +11,14 @@ export default function PostHeader({
   readTime,
   hideCoverImage,
   ogImage,
+  slug,
 }) {
   return (
     <>
       <PostTitle>{title}</PostTitle>
       <div className="max-w-3xl mx-auto">
         <div className="mb-4 text-l md:text-xl lg:text-2xl dark:text-brand-light-grey md:mb-12">
-          <DateFormatter dateString={date} /> · {readTime.text}
+          <DateFormatter dateString={date} /> · {readTime.text} · <ViewCounter slug={slug} />
         </div>
       </div>
       {!hideCoverImage && (

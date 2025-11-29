@@ -95,6 +95,7 @@ export default function Post({ post, preview }) {
                 date={post.date}
                 readTime={post.readTime}
                 hideCoverImage={post.hideCoverImage}
+                slug={post.slug}
               />
               <div className="max-w-3xl mx-auto">
                 {/* TODO: Add special selection color using selection:bg-fuchsia-300 selection:text-fuchsia-900 */}
