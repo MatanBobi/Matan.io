@@ -14,9 +14,6 @@ export default function Index({ allPosts }) {
   return (
     <>
       <Layout>
-        <Head>
-          <title>Matan Borenkraout</title>
-        </Head>
         <Container className="relative">
           <AboutMe />
           {/* <SideCircles /> */}
@@ -25,7 +22,7 @@ export default function Index({ allPosts }) {
           <Intro />
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
           <div className="pb-10 flex justify-center">
-            <Link href="/posts" passHref>
+            <Link href="/posts">
               <Button>See more</Button>
             </Link>
           </div>

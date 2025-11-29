@@ -28,7 +28,7 @@ export default function Meta() {
       <meta name="twitter:site" content="@matanbobi" />
       <meta name="twitter:creator" content="@matanbobi" />
       {router.pathname === "/" ? (
-        <>
+      <>
           <link rel="canonical" href={globals.siteUrl}></link>
           <meta property="og:url" content={globals.siteUrl} />
           <meta name="description" content={globals.description} />

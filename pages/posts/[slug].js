@@ -54,10 +54,10 @@ export default function Post({ post, preview }) {
           <>
             <Link
               href="/posts"
-              className="flex items-center justify-center text-lg py-3.5 my-6 md:my-12 group"
+              className="flex items-center text-lg py-3.5 my-6 group"
               passHref
             >
-              <div className="flex items-center my-10 cursor-pointer w-max rounded-full py-5 px-7 border-brand-light-grey dark:border-brand-dark-grey border font-bold">
+              <div className="flex items-center cursor-pointer w-max rounded-full py-5 px-7 border-brand-light-grey dark:border-brand-dark-grey border font-bold">
                 <div className="hidden dark:flex">
                   <Image
                     src="/assets/icons/arrow-back.svg"
