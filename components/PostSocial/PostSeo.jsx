@@ -15,12 +15,13 @@ export const PostSeo = ({ title, description, coverImage, keywords }) => {
   const canonicalURL =
     globals.siteUrl + router.asPath.substring(0, _pathSliceLength);
 
+  const parsedTitle = `${title} | Matan Borenkraout`;
   return (
     <Head>
-      <title>{title} | Matan Borenkraout</title>
+      <title>{parsedTitle}</title>
       <meta property="og:url" content={canonicalURL} />
       <meta property="og:type" content="article" />
-      <meta property="og:title" content={title} />
+      <meta property="og:title" content={parsedTitle} />
       {description && (
         <>
           <meta name="description" content={description} />
@@ -34,7 +35,7 @@ export const PostSeo = ({ title, description, coverImage, keywords }) => {
         content={coverImage ? "summary_large_image" : "summary"}
       />
       {keywords && <meta name="keywords" content={keywords} />}
-      <meta name="twitter:title" content={title} />
+      <meta name="twitter:title" content={parsedTitle} />
       <meta name="twitter:image" content={`${globals.siteUrl}${coverImage}`} />
       <meta name="image" content={`${globals.siteUrl}${coverImage}`} />
       <meta name="robots" content="index, follow" />

@@ -25,6 +25,8 @@ export const MarkdownCodeBlock = ({ className, children, ...props }) => {
       {formattedChildren}
     </SyntaxHighlighter>
   ) : (
-    <code className={className} {...props} />
+    <code className={className} {...props}>
+      {formattedChildren}
+    </code>
   );
 };
