@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>https://matanbobi.dev</loc><lastmod>2025-11-29T21:57:22.540Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://matanbobi.dev/posts</loc><lastmod>2025-11-29T21:57:22.540Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://matanbobi.dev/posts/a-tip-for-an-amazing-code-review</loc><lastmod>2025-11-29T21:57:22.540Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://matanbobi.dev/posts/caring-as-a-service</loc><lastmod>2025-11-29T21:57:22.540Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://matanbobi.dev/posts/curated-list-google-io-2022-web</loc><lastmod>2025-11-29T21:57:22.540Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://matanbobi.dev/posts/custom-rendering-rtl</loc><lastmod>2025-11-29T21:57:22.540Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://matanbobi.dev/posts/exploring-the-wilderness</loc><lastmod>2025-11-29T21:57:22.540Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://matanbobi.dev/posts/five-signs-of-undervalued-dev</loc><lastmod>2025-11-29T21:57:22.540Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://matanbobi.dev/posts/how-to-use-emojis-as-favicons</loc><lastmod>2025-11-29T21:57:22.540Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://matanbobi.dev/posts/introducing-the-async-cookie-store</loc><lastmod>2025-11-29T21:57:22.540Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://matanbobi.dev/posts/making-the-most-out-of-copilot</loc><lastmod>2025-11-29T21:57:22.540Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://matanbobi.dev/posts/react-defaultprops-is-dying</loc><lastmod>2025-11-29T21:57:22.540Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://matanbobi.dev/posts/stop-passing-setter-functions-to-components</loc><lastmod>2025-11-29T21:57:22.540Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://matanbobi.dev/posts/stop-using-container-presentational</loc><lastmod>2025-11-29T21:57:22.540Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://matanbobi.dev/posts/the-hidden-magic-of-main-thread-scheduling</loc><lastmod>2025-11-29T21:57:22.540Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://matanbobi.dev/posts/tips-for-algorithms-interview</loc><lastmod>2025-11-29T21:57:22.540Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://matanbobi.dev/posts/to-unit-or-integration</loc><lastmod>2025-11-29T21:57:22.540Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://matanbobi.dev/posts/wait-youre-not-using-react-strictmode</loc><lastmod>2025-11-29T21:57:22.540Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://matanbobi.dev/posts/why-i-dont-like-code-coverage</loc><lastmod>2025-11-29T21:57:22.540Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://matanbobi.dev/posts/you-dont-really-need-this-package</loc><lastmod>2025-11-29T21:57:22.540Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+</urlset>

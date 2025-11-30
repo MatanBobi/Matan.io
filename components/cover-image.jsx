@@ -8,14 +8,15 @@ export default function CoverImage({ title, src, slug, style }) {
       src={src}
       alt={`Cover Image for ${title}`}
       className="object-cover rounded-2xl"
-      layout="fill"
+      fill
+      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
     />
   );
   return (
     <div className="sm:mx-0 aspect-w-16 aspect-h-9">
       {slug ? (
-        <Link as={`/posts/${slug}`} href="/posts/[slug]">
-          <a aria-label={title}>{image}</a>
+        <Link href={`/posts/${slug}`} aria-label={title}>
+          {image}
         </Link>
       ) : (
         image

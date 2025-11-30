@@ -12,14 +12,13 @@ export default function Blog({ allPosts }) {
   const router = useRouter();
   const [filter, setFilter] = useState("");
 
-
   const allTags = [
     ...new Set(allPosts.flatMap((post) => post.tags || [])),
   ].sort();
 
   const toggleTag = (tag) => {
-    const selectedTags = new Set(router.query?.tags?.split(',') || []);
-    
+    const selectedTags = new Set(router.query?.tags?.split(",") || []);
+
     if (selectedTags.has(tag)) {
       selectedTags.delete(tag);
     } else {
@@ -28,11 +27,13 @@ export default function Blog({ allPosts }) {
 
     const query = { ...router.query };
     if (selectedTags.size > 0) {
-      query.tags = Array.from(selectedTags).join(',');
+      query.tags = Array.from(selectedTags).join(",");
     } else {
       delete query.tags;
     }
-    router.replace({ pathname: router.pathname, query }, undefined, { shallow: true });
+    router.replace({ pathname: router.pathname, query }, undefined, {
+      shallow: true,
+    });
   };
   useEffect(() => {
     if (filter === router.query?.q || !router.isReady) return;
@@ -59,7 +60,7 @@ export default function Blog({ allPosts }) {
     const matchesTitle = post.title
       .toLowerCase()
       .includes(filter.toLowerCase());
-    const selectedTags = new Set(router.query?.tags?.split(',') || []);
+    const selectedTags = new Set(router.query?.tags?.split(",") || []);
     const matchesTags =
       selectedTags.size === 0 ||
       (post.tags && post.tags.some((tag) => selectedTags.has(tag)));
@@ -69,7 +70,7 @@ export default function Blog({ allPosts }) {
     <>
       <Layout>
         <Head>
-          <title>MatanBobi.dev</title>
+          <title>All Posts | Matan Borenkraout</title>
           <meta
             name="keywords"
             content="JavaScript, TypeScript, React, Testing, Frontend Engineering, Engineering, Matan Borenkraout Blog"
@@ -95,7 +96,9 @@ export default function Blog({ allPosts }) {
                   <Tag
                     tag={tag}
                     key={tag}
-                    selected={router.query?.tags?.split(',')?.includes(tag) || false}
+                    selected={
+                      router.query?.tags?.split(",")?.includes(tag) || false
+                    }
                     onClick={toggleTag}
                   />
                 ))}

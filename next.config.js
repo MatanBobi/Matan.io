@@ -1,6 +1,15 @@
 module.exports = {
   images: {
-    domains: ["media.giphy.com", "pbs.twimg.com"],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'media.giphy.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'pbs.twimg.com',
+      },
+    ],
   },
   webpack(config) {
     config.module.rules.push({
