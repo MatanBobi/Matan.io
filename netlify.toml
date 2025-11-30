@@ -1,8 +1,5 @@
 [build]
 publish = ".next"
 
-[[plugins]]
-package = "@netlify/next"
-
 [build.environment]
 NPM_FLAGS = "--no-optional"
