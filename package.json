@@ -22,7 +22,7 @@
     "remark-html": "^16.0.1"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^5.7.4",
+    "@netlify/next": "^1.4.9",
     "@svgr/webpack": "^8.1.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/postcss": "^4.1.4",
