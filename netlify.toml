@@ -1,5 +1,2 @@
 [build]
 publish = ".next"
-
-[build.environment]
-NPM_FLAGS = "--no-optional"
