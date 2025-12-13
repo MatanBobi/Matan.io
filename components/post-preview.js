@@ -1,4 +1,3 @@
-import Avatar from "../components/avatar";
 import DateFormatter from "../components/date-formatter";
 import CoverImage from "./cover-image";
 import Link from "next/link";
@@ -12,7 +11,10 @@ export default function PostPreview({
   readTime,
 }) {
   return (
-    <Link href={`/posts/${slug}`} className="flex flex-col p-4 rounded-2xl border-brand-light-grey hover:border-brand-dark-grey transition-all duration-200 border cursor-pointer bg-white dark:bg-brand-background dark:border-brand-dark-grey dark:hover:border-brand-light-grey">
+    <Link
+      href={`/posts/${slug}`}
+      className="flex flex-col p-4 rounded-2xl border-brand-light-grey hover:border-brand-dark-grey transition-all duration-200 border cursor-pointer bg-white dark:bg-brand-background dark:border-brand-dark-grey dark:hover:border-brand-light-grey"
+    >
       <div className="mb-2 overflow-hidden">
         <CoverImage title={title} src={coverImage} />
       </div>
