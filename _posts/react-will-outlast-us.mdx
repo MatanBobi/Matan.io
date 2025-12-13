@@ -12,7 +12,7 @@ keywords:
 tags: ["React", "JavaScript"]
 ---
 
-I've been writing React code for almost a decade now. I've seen every cycle of panic, backlash, and "React is dead" prediction - honestly, it made me tired.  
+I've been writing React code for almost a decade now. I've seen every cycle of panic, backlash, and "React is dead" prediction - honestly, it made me tired (even the recent React2Shell).  
 But we've hit an inflection point, and it has nothing to do with the new `Activity` component or the long-awaited React Compiler.
 
 I'm here to say: React has won because of something outside the React core team's control.  
@@ -23,15 +23,16 @@ And now, it won't just be hard to dethrone - it will be practically impossible.
 People usually point to the same three reasons:
 
 - **Ecosystem** - React has a very large community (a subreddit with almost 200k people) and a near-infinite amount of companion libraries and meta-frameworks (from component libraries to state management, Next.js, and many more).
-- **Job market** - The job market favors React engineers in somewhat of a vicious cycle: companies are looking for React engineers because they build apps with React, and the cycle goes on where bootcamps only teach React.
-- **Simplicity** - People tend to think that React's mental model is easy to grasp, even for beginners.
+- **Job market** - The job market [favors React engineers](https://www.devjobsscanner.com/blog/the-most-demanded-frontend-frameworks/) in somewhat of a vicious cycle: companies are looking for React engineers because they build apps with React, and the cycle goes on where bootcamps only teach React.
+  ** The Component Model** - React wasn't necessarily the simplest, but it was the first to successfully standardize the "Component" mental model in a way that scaled for large teams.
 
 But, in 2024, something else happened.
 
 ## AI and The "Vibe Coding" Era
 
 The AI shift started with GitHub Copilot in 2021: autocomplete, but smarter.  
-Three years later, in November 2024, a small company called [Lovable](https://lovable.dev/) launched something different - an _application generator_ - and helped push the term ["vibe coding"](https://x.com/karpathy/status/1886192184808149383) into the mainstream.
+Three years later, in November 2024, a small company called [Lovable](https://lovable.dev/) launched something different - an _application generator_.  
+This kickstarted the era that Andrej Karpathy would later coin as ["vibe coding"](https://x.com/karpathy/status/1886192184808149383).
 
 That moment changed everything for React.
 
@@ -48,6 +49,7 @@ Sure - expected. Then comes the more important line:
 
 > large language models (LLMs) trained on code repositories can generate high-quality React code due to its dominance in online resources.
 
+It's clearly visible when looking at these tools' system prompts: [Lovable](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/7e9f6102c7d164dfdbfca3bfd66f3d8ad5c0b2cc/Lovable/Agent%20Prompt.txt#L8), [v0](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/7e9f6102c7d164dfdbfca3bfd66f3d8ad5c0b2cc/v0%20Prompts%20and%20Tools/Prompt.txt#L14), [Bolt](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/7e9f6102c7d164dfdbfca3bfd66f3d8ad5c0b2cc/Open%20Source%20prompts/Bolt/Prompt.txt#L275), 
 That's the real story.
 
 We've reached a point where LLMs favor React because they saw it so many times in their training data (be it tutorials, repos, boilerplates, blog posts, etc.), leading to another vicious cycle of creating more and more React applications.  
@@ -56,7 +58,7 @@ You're right, 3/3 - all three models defaulted to React as the framework of choi
 
 The underlying data matches this:
 
-- **State of JS 2024**: React at 82% usage; Vue and Angular far behind (51%, 50%).
+- **[State of JS 2024](https://2024.stateofjs.com/en-US/libraries/front-end-frameworks/)**: React at 82% usage; Vue and Angular far behind (51%, 50%).
 - **StackOverflow**: ~477k React questions; ~300k Angular; ~100k Vue; ~6k Svelte.
 - **GitHub dependents**: React ~29.8M; Angular ~4M; Svelte ~0.4M.
 
