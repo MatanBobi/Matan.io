@@ -5,7 +5,7 @@ export const MarkdownImage = (props) => (
     <Image
       alt={props.alt}
       {...props}
-      className="object-contain"
+      className="object-contain not-prose"
       layout="fill"
     />
   </div>
