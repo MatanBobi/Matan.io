@@ -1,0 +1,94 @@
+---
+title: React will outlast us
+excerpt: React has stayed at the center of frontend development for years, but in 2024 it crossed a threshold that few noticed. It's now become almost impossible to dethrone - and the reason has nothing to do with the React team, the ecosystem, or anything you'd expect.
+coverImage: /assets/blog/react-will-outlast-us/cover.webp
+date: "2026-01-13T02:26:05.322Z"
+author:
+  name: Matan Borenkraout
+  picture: /assets/blog/authors/matan.jpeg
+ogImage:
+  url: /assets/blog/react-will-outlast-us/banner.png
+keywords:
+tags: ["React", "JavaScript"]
+---
+
+I've been writing React code for almost a decade now. I've seen every cycle of panic, backlash, and "React is dead" prediction - honestly, it made me tired (even the recent React2Shell).  
+But we've hit an inflection point, and it has nothing to do with the new Activity component or the long-awaited React Compiler.
+It has everything to do with how AI writes and scaffolds our apps.
+
+I'm here to say: React didn't just become the default choice.
+It became the statistical default in the training data of every major coding model.
+
+And now, it won't just be hard to dethrone - it will be practically impossible without changing how AI models learn and generate code.
+
+## Why React dominated _before_ 2024?
+
+People usually point to the same three reasons:
+
+- **Ecosystem** - React has a very large community (a subreddit with almost 200k people) and a near-infinite amount of companion libraries and meta-frameworks (from component libraries to state management, Next.js, and many more).
+- **Job market** - The job market [favors React engineers](https://www.devjobsscanner.com/blog/the-most-demanded-frontend-frameworks/) in somewhat of a vicious cycle: companies are looking for React engineers because they build apps with React, and the cycle goes on where bootcamps only teach React.
+- **The Component Model** - React wasn't necessarily the simplest, but it was the first to successfully standardize the "Component" mental model in a way that scaled for large teams.
+
+But, in 2024, something else happened.
+
+## AI and The "Vibe Coding" Era
+
+The AI shift started with GitHub Copilot in 2021: autocomplete, but smarter.  
+Three years later, in November 2024, a small company called [Lovable](https://lovable.dev/) launched something different - an _application generator_.  
+This kickstarted the era that Andrej Karpathy would later coin as ["vibe coding"](https://x.com/karpathy/status/1886192184808149383).
+
+That moment changed everything for React, because AI agents suddenly became its most enthusiastic evangelists.
+
+After Lovable's launch (and similar tools like Base44, Bolt, and v0), React's weekly downloads on npm almost doubled.
+Correlation isn't causation, but it lines up uncomfortably well with the moment AI tools started defaulting to React for everything.  
+I know, npm numbers may be inflated by CI/CD, but the trend is real: React is now approaching **50M downloads per week**.
+
+![React on NPM trends until end of 2025](/assets/blog/react-will-outlast-us/react-trends.webp)
+
+Lovable say they picked React because:
+
+> React is the most widely adopted front-end library, with a vast developer community and extensive third-party support. This means that almost any UI challenge can be solved using existing React packages, saving time and effort in development.
+
+Sure - expected. Then comes the more important line:
+
+> large language models (LLMs) trained on code repositories can generate high-quality React code due to its dominance in online resources.
+
+It's clearly visible when looking at these tools' system prompts: [Lovable](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/7e9f6102c7d164dfdbfca3bfd66f3d8ad5c0b2cc/Lovable/Agent%20Prompt.txt#L8), [v0](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/7e9f6102c7d164dfdbfca3bfd66f3d8ad5c0b2cc/v0%20Prompts%20and%20Tools/Prompt.txt#L14), [Bolt](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/7e9f6102c7d164dfdbfca3bfd66f3d8ad5c0b2cc/Open%20Source%20prompts/Bolt/Prompt.txt#L275),
+That's the real story.
+
+LLMs favor React for the same reason humans do: repetition at scale.  
+Let's play a little game. I tried the following prompt in ChatGPT, Gemini, and Claude: "Generate a UI for a todo app." Want to guess how many of them used React?  
+You're right, 3/3 - all three models defaulted to React as the framework of choice. None of them chose Angular, Vue, Svelte, or plain HTML and JS.
+
+The underlying data matches this:
+
+- **[State of JS 2024](https://2024.stateofjs.com/en-US/libraries/front-end-frameworks/)**: React at 82% usage; Vue and Angular far behind (51%, 50%).
+- **StackOverflow**: ~477k React questions; ~300k Angular; ~100k Vue; ~6k Svelte.
+- **GitHub dependents**: React ~29.8M; Angular ~4M; Svelte ~0.4M.
+
+Those numbers aren't just popularity metrics.
+They're a mirror for what LLMs see over and over again when they learn how to code. There's just no way to undo that.
+
+## The Momentum Problem
+
+Every new framework (hello Remix 3.0 👋) faces an impossible barrier:  
+LLMs won't default to tools that don't already have massive adoption. And they can't reach massive adoption **without** LLM amplification.  
+You can nudge models with better prompts, tools, and context, and some frameworks are already doing that.
+But that's an uphill battle against years of React-heavy training data and examples baked into the models themselves.
+
+For example, here's a quote taken from Reddit in regards to Svelte 5:
+
+> Most of them still don't get Svelte 5. … they either spit out old Svelte … or mess up the new syntax completely.
+
+I know, you can enrich context with MCP (Context7) or tool-specific docs, but that only gets you so far. It doesn't change the underlying training-weight reality: React occupies far more of the internet's code corpus than anything else.
+
+React isn't going anywhere.
+Not because it's perfect, or because the team made all the right calls - but because AI locked it into a feedback loop that compounds faster than competitors can realistically catch up.
+
+The uncomfortable truth is that future frontend decisions won't be made by teams alone.
+They'll be pre-decided by whatever the models are best at generating - and today, that's React.
+
+If you have any questions or want to continue this debate, feel free to comment here or reach out on [X](https://x.com/matanbobi).
+
+Thank you for reading,  
+Matan.

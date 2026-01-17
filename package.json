@@ -12,14 +12,15 @@
     "classnames": "^2.5.1",
     "date-fns": "^4.1.0",
     "gray-matter": "^4.0.3",
-    "next": "^15.0.7",
+    "next": "^15.5.9",
     "next-mdx-remote": "^5.0.0",
     "querystring": "^0.2.1",
-    "react": "^19.3.0-canary-b061b597-20251212",
-    "react-dom": "^19.3.0-canary-b061b597-20251212",
+    "react": "^19.3.0-canary-bef88f7c-20260116",
+    "react-dom": "^19.3.0-canary-bef88f7c-20260116",
     "react-syntax-highlighter": "^15.6.1",
     "remark": "^15.0.1",
-    "remark-html": "^16.0.1"
+    "remark-html": "^16.0.1",
+    "sharp": "^0.33.5"
   },
   "devDependencies": {
     "@netlify/plugin-nextjs": "^5.7.4",
