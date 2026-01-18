@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
@@ -45,7 +45,7 @@ export default function Post({ post, preview }) {
   };
 
   return (
-    <Layout preview={preview}>
+    <Layout>
       {/* <SideCircles /> */}
       <Container className="max-w-4xl">
         {router.isFallback ? (
