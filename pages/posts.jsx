@@ -67,50 +67,48 @@ export default function Blog({ allPosts }) {
     return matchesTitle && matchesTags;
   });
   return (
-    <>
-      <Layout>
-        <Head>
-          <title>All Posts | Matan Borenkraout</title>
-          <meta
-            name="keywords"
-            content="JavaScript, TypeScript, React, Testing, Frontend Engineering, Engineering, Matan Borenkraout Blog"
-          />
-        </Head>
-        <Container className="my-8">
-          <div className="flex flex-col gap-8">
-            <div className="flex flex-col md:flex-row gap-4 items-center">
-              <div className="w-full md:w-2/6">
-                <Input
-                  value={filter}
-                  onChange={(value) => {
-                    setFilter(value);
-                  }}
-                  placeholder="Search"
-                />
-              </div>
-            </div>
-            <div>
-              <h2 className="text-xl font-bold mb-3">Search by topic</h2>
-              <div className="flex flex-wrap gap-2">
-                {allTags.map((tag) => (
-                  <Tag
-                    tag={tag}
-                    key={tag}
-                    selected={
-                      router.query?.tags?.split(",")?.includes(tag) || false
-                    }
-                    onClick={toggleTag}
-                  />
-                ))}
-              </div>
+    <Layout>
+      <Head>
+        <title>All Posts | Matan Borenkraout</title>
+        <meta
+          name="keywords"
+          content="JavaScript, TypeScript, React, Testing, Frontend Engineering, Engineering, Matan Borenkraout Blog"
+        />
+      </Head>
+      <Container className="my-8">
+        <div className="flex flex-col gap-8">
+          <div className="flex flex-col md:flex-row gap-4 items-center">
+            <div className="w-full md:w-2/6">
+              <Input
+                value={filter}
+                onChange={(value) => {
+                  setFilter(value);
+                }}
+                placeholder="Search"
+              />
             </div>
           </div>
-        </Container>
-        <Container>
-          <MoreStories posts={filteredPosts} />
-        </Container>
-      </Layout>
-    </>
+          <div>
+            <h2 className="text-xl font-bold mb-3">Search by topic</h2>
+            <div className="flex flex-wrap gap-2">
+              {allTags.map((tag) => (
+                <Tag
+                  tag={tag}
+                  key={tag}
+                  selected={
+                    router.query?.tags?.split(",")?.includes(tag) || false
+                  }
+                  onClick={toggleTag}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </Container>
+      <Container>
+        <MoreStories posts={filteredPosts} />
+      </Container>
+    </Layout>
   );
 }
 

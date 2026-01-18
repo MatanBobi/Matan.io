@@ -10,23 +10,21 @@ import { Button } from "../components/Button";
 export default function Index({ allPosts }) {
   const morePosts = allPosts;
   return (
-    <>
-      <Layout>
-        <Container className="relative">
-          <AboutMe />
-          {/* <SideCircles /> */}
-        </Container>
-        <Container>
-          <Intro />
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-          <div className="pb-10 flex justify-center">
-            <Link href="/posts">
-              <Button>See more</Button>
-            </Link>
-          </div>
-        </Container>
-      </Layout>
-    </>
+    <Layout>
+      <Container className="relative">
+        <AboutMe />
+        {/* <SideCircles /> */}
+      </Container>
+      <Container>
+        <Intro />
+        {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+        <div className="pb-10 flex justify-center">
+          <Link href="/posts">
+            <Button>See more</Button>
+          </Link>
+        </div>
+      </Container>
+    </Layout>
   );
 }
 
