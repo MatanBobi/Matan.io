@@ -3,6 +3,7 @@ import Footer from "../components/footer";
 import Meta from "../components/meta";
 import { Header } from "../components/Header/";
 import { useThemeMode, Theme, ThemeContext } from "../hooks/useThemeMode";
+import { Databuddy } from "@databuddy/sdk/react";
 
 export default function Layout({ children }) {
   const [colorTheme, setTheme] = useThemeMode();
@@ -22,6 +23,8 @@ export default function Layout({ children }) {
         </div>
         <Footer />
       </div>
+
+      <Databuddy clientId="547b908f-52c7-4699-b1ec-dba9c567facf" />
     </ThemeContext.Provider>
   );
 }
