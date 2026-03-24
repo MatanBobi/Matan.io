@@ -19,9 +19,15 @@ export default function AboutMe(props) {
             }}
           />
         </div>
-        <span className="absolute top-[calc(50%-2rem)] left-[calc(50%-3rem)] -translate-y-1/2 -translate-x-1/2 w-56 h-56 md:w-72 md:h-72"><span className="block w-full h-full bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-40 dark:bg-fuchsia-400 dark:opacity-20 dark:mix-blend-screen animate-blob-1"></span></span>
-        <span className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-56 h-56 md:w-72 md:h-72"><span className="block w-full h-full bg-brand-blue rounded-full mix-blend-multiply filter blur-xl opacity-40 dark:bg-sky-400 dark:opacity-20 dark:mix-blend-screen animate-blob-2"></span></span>
-        <span className="absolute top-1/2 left-[calc(50%+2rem)] -translate-y-1/2 -translate-x-1/2 w-56 h-56 md:w-72 md:h-72"><span className="block w-full h-full bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-40 dark:bg-indigo-400 dark:opacity-20 dark:mix-blend-screen animate-blob-3"></span></span>
+        <span className="absolute top-[calc(50%-2rem)] left-[calc(50%-3rem)] -translate-y-1/2 -translate-x-1/2 w-56 h-56 md:w-72 md:h-72">
+          <span className="block w-full h-full bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-40 dark:bg-fuchsia-400 dark:opacity-20 dark:mix-blend-screen animate-blob-1"></span>
+        </span>
+        <span className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-56 h-56 md:w-72 md:h-72">
+          <span className="block w-full h-full bg-brand-blue rounded-full mix-blend-multiply filter blur-xl opacity-40 dark:bg-sky-400 dark:opacity-20 dark:mix-blend-screen animate-blob-2"></span>
+        </span>
+        <span className="absolute top-1/2 left-[calc(50%+2rem)] -translate-y-1/2 -translate-x-1/2 w-56 h-56 md:w-72 md:h-72">
+          <span className="block w-full h-full bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-40 dark:bg-indigo-400 dark:opacity-20 dark:mix-blend-screen animate-blob-3"></span>
+        </span>
       </div>
       <div
         className="flex flex-col flex-1 justify-center grow animate-fade-up"

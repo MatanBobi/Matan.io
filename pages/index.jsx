@@ -39,7 +39,10 @@ export default function Index({ allPosts }) {
                 href="/posts"
                 className="group hidden md:inline-flex items-center gap-1 text-brand-dark-grey dark:text-brand-light-grey hover:text-brand-black dark:hover:text-white transition-colors font-medium"
               >
-                All posts <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                All posts{" "}
+                <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
+                  &rarr;
+                </span>
               </Link>
             </div>
             <MoreStories posts={morePosts} featured />
