@@ -52,6 +52,10 @@ module.exports = {
       },
       animation: {
         fade: "fade 1s linear infinite",
+        "blob-1": "blob1 8s ease-in-out infinite",
+        "blob-2": "blob2 10s ease-in-out infinite",
+        "blob-3": "blob3 12s ease-in-out infinite",
+        "fade-up": "fadeUp 0.5s ease-out both",
       },
       scale: {
         35: "0.35",
@@ -60,6 +64,25 @@ module.exports = {
         fade: {
           "0%, 100%": { opacity: 1 },
           "50%": { opacity: 0 },
+        },
+        blob1: {
+          "0%, 100%": { transform: "translate(0, 0) scale(1)" },
+          "33%": { transform: "translate(30px, -20px) scale(1.1)" },
+          "66%": { transform: "translate(-20px, 15px) scale(0.9)" },
+        },
+        blob2: {
+          "0%, 100%": { transform: "translate(0, 0) scale(1)" },
+          "33%": { transform: "translate(-25px, 25px) scale(0.9)" },
+          "66%": { transform: "translate(20px, -15px) scale(1.1)" },
+        },
+        blob3: {
+          "0%, 100%": { transform: "translate(0, 0) scale(1)" },
+          "33%": { transform: "translate(15px, 30px) scale(1.1)" },
+          "66%": { transform: "translate(-30px, -10px) scale(0.9)" },
+        },
+        fadeUp: {
+          from: { opacity: "0", transform: "translateY(20px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
         },
       },
       typography: {

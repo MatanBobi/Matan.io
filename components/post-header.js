@@ -14,19 +14,27 @@ export default function PostHeader({
     <>
       <PostTitle>{title}</PostTitle>
       <div className="max-w-3xl mx-auto">
-        <div className="mb-4 text-l md:text-xl lg:text-2xl dark:text-brand-light-grey md:mb-12">
-          <DateFormatter dateString={date} /> · {readTime.text}
+        <div className="mb-6 text-base md:text-lg text-brand-dark-grey dark:text-brand-light-grey md:mb-10">
+          <DateFormatter dateString={date} />
+          <span className="mx-2" aria-hidden="true">
+            &middot;
+          </span>
+          <span>{readTime.text}</span>
         </div>
       </div>
       {!hideCoverImage && (
-        <div className="mb-8 md:mb-16 sm:mx-0 p-4 bg-white dark:bg-brand-background rounded-2xl border-brand-light-grey dark:border-brand-dark-grey border">
+        <div className="mb-8 md:mb-14 sm:mx-0 p-3 bg-white dark:bg-brand-background rounded-2xl border-brand-light-grey dark:border-brand-dark-grey border">
           <CoverImage
             title={title}
             src={coverImage}
             height={620}
             width={1240}
           />
-          {ogImage.credit ? <div className="mt-4">{ogImage.credit}</div> : null}
+          {ogImage.credit ? (
+            <div className="mt-3 text-sm text-brand-dark-grey dark:text-brand-light-grey">
+              {ogImage.credit}
+            </div>
+          ) : null}
         </div>
       )}
     </>

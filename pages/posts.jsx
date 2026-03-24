@@ -77,6 +77,9 @@ export default function Blog({ allPosts }) {
       </Head>
       <Container className="my-8">
         <div className="flex flex-col gap-8">
+          <h1 className="font-title text-4xl md:text-5xl font-bold tracking-tighter">
+            All posts
+          </h1>
           <div className="flex flex-col md:flex-row gap-4 items-center">
             <div className="w-full md:w-2/6">
               <Input
@@ -84,13 +87,18 @@ export default function Blog({ allPosts }) {
                 onChange={(value) => {
                   setFilter(value);
                 }}
-                placeholder="Search"
+                placeholder="Search posts…"
+                aria-label="Search posts by title"
               />
             </div>
           </div>
           <div>
-            <h2 className="text-xl font-bold mb-3">Search by topic</h2>
-            <div className="flex flex-wrap gap-2">
+            <h2 className="text-lg font-bold mb-3">Filter by topic</h2>
+            <div
+              className="flex flex-wrap gap-2"
+              role="group"
+              aria-label="Topic filters"
+            >
               {allTags.map((tag) => (
                 <Tag
                   tag={tag}
@@ -106,7 +114,24 @@ export default function Blog({ allPosts }) {
         </div>
       </Container>
       <Container>
-        <MoreStories posts={filteredPosts} />
+        {filteredPosts.length > 0 ? (
+          <MoreStories posts={filteredPosts} />
+        ) : (
+          <div className="py-16 text-center text-brand-dark-grey dark:text-brand-light-grey">
+            <p className="text-xl">No posts found matching your search.</p>
+            <button
+              onClick={() => {
+                setFilter("");
+                router.replace({ pathname: router.pathname }, undefined, {
+                  shallow: true,
+                });
+              }}
+              className="mt-4 underline underline-offset-4 hover:text-brand-black dark:hover:text-white transition-colors"
+            >
+              Clear filters
+            </button>
+          </div>
+        )}
       </Container>
     </Layout>
   );

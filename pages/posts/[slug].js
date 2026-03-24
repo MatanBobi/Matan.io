@@ -54,29 +54,29 @@ export default function Post({ post, preview }) {
           <>
             <Link
               href="/posts"
-              className="flex items-center text-lg py-3.5 my-6 group"
-              passHref
+              className="inline-flex items-center text-lg py-3.5 my-6 group"
+              aria-label="Back to all posts"
             >
-              <div className="flex items-center cursor-pointer w-max rounded-full py-5 px-7 border-brand-light-grey dark:border-brand-dark-grey border font-bold">
+              <div className="flex items-center cursor-pointer w-max rounded-full py-4 px-6 border-brand-light-grey dark:border-brand-dark-grey border font-bold hover:border-brand-dark-grey dark:hover:border-brand-light-grey transition-colors focus-visible:ring-2 focus-visible:ring-brand-blue">
                 <div className="hidden dark:flex">
                   <Image
                     src="/assets/icons/arrow-back.svg"
-                    height={24}
-                    width={24}
-                    alt="All posts"
+                    height={20}
+                    width={20}
+                    alt=""
                     className="group-hover:-translate-x-1 transition-transform"
                   />
                 </div>
                 <div className="flex dark:hidden">
                   <Image
                     src="/assets/icons/arrow-back-light.svg"
-                    height={24}
-                    width={24}
-                    alt="All posts"
+                    height={20}
+                    width={20}
+                    alt=""
                     className="group-hover:-translate-x-1 transition-transform"
                   />
                 </div>
-                <span className="mx-2">All posts</span>
+                <span className="ml-2">All posts</span>
               </div>
             </Link>
             <article className="pb-4 relative">
@@ -112,7 +112,12 @@ export default function Post({ post, preview }) {
                 title={post.title}
               />
             </article>
-            {isMounted && <GiscusComments />}
+            {isMounted && (
+              <section aria-label="Comments" className="mt-8 max-w-3xl mx-auto">
+                <h2 className="text-2xl font-bold mb-6">Comments</h2>
+                <GiscusComments />
+              </section>
+            )}
           </>
         )}
       </Container>

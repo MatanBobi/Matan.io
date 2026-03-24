@@ -10,6 +10,12 @@ export default function Layout({ children }) {
 
   return (
     <ThemeContext.Provider value={colorTheme}>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-brand-blue focus:text-white"
+      >
+        Skip to content
+      </a>
       <div className={classNames({ dark: colorTheme === Theme.Dark })}>
         <Meta />
         <div className="min-h-screen bg-white dark:bg-brand-background dark:text-white transition-colors">
@@ -19,7 +25,7 @@ export default function Layout({ children }) {
               setTheme(colorTheme === Theme.Dark ? Theme.Light : Theme.Dark);
             }}
           />
-          <main>{children}</main>
+          <main id="main-content">{children}</main>
         </div>
         <Footer />
       </div>

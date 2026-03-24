@@ -5,7 +5,7 @@ export const PostSocial = ({ title, url, slug }) => {
   const text = `I just read "${title}" by @matanbobi\n\n`;
 
   return (
-    <div className="flex justify-between mt-4 mb-1 md:mb-2 md:mt-8">
+    <div className="flex justify-between items-center mb-6 md:mb-8">
       <Link
         target="_blank"
         rel="noreferrer noopener"
@@ -13,6 +13,7 @@ export const PostSocial = ({ title, url, slug }) => {
           url: url,
           text,
         })}`}
+        className="underline underline-offset-4 decoration-1 hover:decoration-2 text-brand-dark-grey dark:text-brand-light-grey hover:text-brand-black dark:hover:text-white transition-colors"
       >
         Tweet this article
       </Link>
@@ -20,8 +21,9 @@ export const PostSocial = ({ title, url, slug }) => {
         href={`${globals.githubRepo}/edit/main/_posts/${slug}.mdx`}
         target="_blank"
         rel="noreferrer noopener"
+        className="underline underline-offset-4 decoration-1 hover:decoration-2 text-brand-dark-grey dark:text-brand-light-grey hover:text-brand-black dark:hover:text-white transition-colors"
       >
-        Edit this article
+        Edit on GitHub
       </Link>
     </div>
   );

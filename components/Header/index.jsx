@@ -26,13 +26,18 @@ export const Header = ({ onClickChangeTheme, isDarkMode }) => {
         </div>
       )}
       <header className="flex px-4 justify-between items-center relative z-20 md:justify-start">
-        <Link href="/">
+        <Link href="/" aria-label="Go to homepage">
           <Logo />
         </Link>
-        <nav className="hidden md:flex">
+        <nav className="hidden md:flex" aria-label="Primary">
           <ul className="flex font-bold text-lg">
             <li className="my-11 mx-6">
-              <Link href="/posts">Blog</Link>
+              <Link
+                href="/posts"
+                className="hover:underline underline-offset-8 decoration-2"
+              >
+                Blog
+              </Link>
             </li>
             {/* <li className="my-11 mx-6">About</li>
             <li className="my-11 mx-6">Contact</li> */}
@@ -42,6 +47,7 @@ export const Header = ({ onClickChangeTheme, isDarkMode }) => {
           <IconButton
             className="md:my-6 md:mx-6 overflow-hidden relative w-14 h-14"
             onClick={onClickChangeTheme}
+            aria-label="Toggle color theme"
           >
             <span
               className="absolute flex translate-x-16 rotate-180 transition-transform duration-300 origin-center dark:translate-x-0 dark:rotate-0 hover:rotate-45!"
@@ -76,14 +82,16 @@ export const Header = ({ onClickChangeTheme, isDarkMode }) => {
           </div>
         </div>
         {isMenuOpen && (
-          <div className="fixed z-10 md:hidden inset-0 bg-white dark:bg-brand-background text-white">
-            <nav className="flex flex-col">
-              <Link href="/" className="m-4">
+          <div className="fixed z-10 md:hidden inset-0 bg-white dark:bg-brand-background text-brand-black dark:text-white">
+            <nav id="mobile-nav" className="flex flex-col" aria-label="Mobile">
+              <Link href="/" className="m-4" onClick={() => setMenuOpen(false)}>
                 <Logo />
               </Link>
               <ul className="flex flex-col font-bold text-2xl">
                 <li className="my-11 mx-auto border-b">
-                  <Link href="/posts">Blog</Link>
+                  <Link href="/posts" onClick={() => setMenuOpen(false)}>
+                    Blog
+                  </Link>
                 </li>
                 {/* <li className="my-11 mx-6">About</li>
             <li className="my-11 mx-6">Contact</li> */}

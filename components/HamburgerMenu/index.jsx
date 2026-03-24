@@ -6,8 +6,10 @@ export const HamburgerMenu = ({ onChange, value }) => {
         type="checkbox"
         id="check"
         onChange={onChange}
-        value={value}
-        role="menuitem"
+        checked={value}
+        aria-label="Toggle navigation menu"
+        aria-controls="mobile-nav"
+        aria-expanded={value}
       />
       <span className="bg-brand-background dark:bg-white w-2/4 peer-checked:origin-bottom"></span>
       <span className="bg-brand-background dark:bg-white w-full peer-checked:origin-top"></span>

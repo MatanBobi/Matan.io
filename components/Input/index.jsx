@@ -5,6 +5,7 @@ export const Input = ({
   disabled,
   placeholder,
   role,
+  ...rest
 }) => {
   const onChangeWrapper = (e) => {
     if (onChange) {
@@ -16,10 +17,11 @@ export const Input = ({
     <input
       onChange={onChangeWrapper}
       value={value}
-      className="rounded-full w-full py-5 px-7 border-brand-light-grey bg-white dark:border-brand-dark-grey dark:bg-brand-background border font-bold transition-all"
+      className="rounded-full w-full py-4 px-6 border-brand-light-grey bg-white dark:border-brand-dark-grey dark:bg-brand-background border font-bold transition-all focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 focus-visible:outline-none"
       disabled={disabled}
       placeholder={placeholder}
       role={role}
+      {...rest}
     />
   );
 };
