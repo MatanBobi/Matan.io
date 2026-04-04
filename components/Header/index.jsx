@@ -25,7 +25,10 @@ export const Header = ({ onClickChangeTheme, isDarkMode }) => {
           />
         </div>
       )}
-      <header className="flex px-4 justify-between items-center relative z-20 md:justify-start">
+      <header
+        style={{ viewTransitionName: "site-header" }}
+        className="flex px-4 justify-between items-center relative z-20 md:justify-start"
+      >
         <Link href="/" aria-label="Go to homepage">
           <Logo />
         </Link>

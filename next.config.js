@@ -1,4 +1,7 @@
 module.exports = {
+  experimental: {
+    viewTransition: true,
+  },
   images: {
     remotePatterns: [
       {

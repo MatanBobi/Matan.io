@@ -4,7 +4,11 @@ import { ViewTransition } from "react";
 
 export default function CoverImage({ title, src, slug, style }) {
   const image = (
-    <ViewTransition name={`post-image-${slug}`}>
+    <ViewTransition
+      name={slug ? `post-image-${slug}` : undefined}
+      share="morph"
+      default="none"
+    >
       <Image
         priority={true}
         src={src}

@@ -9,6 +9,7 @@ export default function PostHeader({
   readTime,
   hideCoverImage,
   ogImage,
+  slug,
 }) {
   return (
     <>
@@ -27,6 +28,7 @@ export default function PostHeader({
           <CoverImage
             title={title}
             src={coverImage}
+            slug={slug}
             height={620}
             width={1240}
           />
