@@ -6,7 +6,7 @@ export const MarkdownImage = (props) => (
       alt={props.alt}
       {...props}
       className="object-contain not-prose"
-      layout="fill"
+      fill
     />
   </div>
 );
