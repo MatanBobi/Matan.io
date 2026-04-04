@@ -28,7 +28,7 @@ export default function PostHeader({
           <CoverImage
             title={title}
             src={coverImage}
-            slug={slug}
+            vtName={`post-image-${slug}`}
             height={620}
             width={1240}
           />

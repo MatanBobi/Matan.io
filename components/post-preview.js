@@ -18,7 +18,7 @@ export default function PostPreview({
         className="group flex flex-col md:flex-row gap-6 p-5 rounded-2xl border border-brand-light-grey/60 hover:border-brand-dark-grey transition-all duration-200 cursor-pointer bg-white dark:bg-[#2a303c] dark:border-brand-dark-grey dark:hover:border-brand-light-grey/60 shadow-sm hover:shadow-md hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2"
       >
         <div className="md:w-3/5 overflow-hidden rounded-xl">
-          <CoverImage title={title} src={coverImage} slug={slug} />
+          <CoverImage title={title} src={coverImage} vtName={`post-image-${slug}`} />
         </div>
         <div className="md:w-2/5 flex flex-col justify-center">
           <div className="text-sm text-brand-dark-grey dark:text-brand-light-grey mb-3">
@@ -45,7 +45,7 @@ export default function PostPreview({
       className="group flex flex-col h-full p-4 rounded-2xl border border-brand-light-grey/60 hover:border-brand-dark-grey hover:-translate-y-0.5 transition-all duration-200 cursor-pointer bg-white dark:bg-[#2a303c] dark:border-brand-dark-grey dark:hover:border-brand-light-grey/60 shadow-sm hover:shadow-md focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2"
     >
       <div className="mb-3 overflow-hidden rounded-xl">
-        <CoverImage title={title} src={coverImage} slug={slug} />
+        <CoverImage title={title} src={coverImage} vtName={`post-image-${slug}`} />
       </div>
       <div className="text-sm text-brand-dark-grey dark:text-brand-light-grey mb-2">
         <DateFormatter dateString={date} />

@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, startTransition } from "react";
+import { ViewTransition } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import Container from "../components/container";
@@ -31,8 +32,10 @@ export default function Blog({ allPosts }) {
     } else {
       delete query.tags;
     }
-    router.replace({ pathname: router.pathname, query }, undefined, {
-      shallow: true,
+    startTransition(() => {
+      router.replace({ pathname: router.pathname, query }, undefined, {
+        shallow: true,
+      });
     });
   };
   useEffect(() => {
@@ -47,7 +50,9 @@ export default function Blog({ allPosts }) {
       query = {};
     }
 
-    router.replace({ pathname: router.pathname, query });
+    startTransition(() => {
+      router.replace({ pathname: router.pathname, query });
+    });
   }, [filter]);
 
   useEffect(() => {
@@ -68,6 +73,11 @@ export default function Blog({ allPosts }) {
   });
   return (
     <Layout>
+      <ViewTransition
+        enter={{ 'nav-forward': 'nav-forward', 'nav-back': 'nav-back', default: 'none' }}
+        exit={{ 'nav-forward': 'nav-forward', 'nav-back': 'nav-back', default: 'none' }}
+        default="none"
+      >
       <Head>
         <title>All Posts | Matan Borenkraout</title>
         <meta
@@ -122,8 +132,10 @@ export default function Blog({ allPosts }) {
             <button
               onClick={() => {
                 setFilter("");
-                router.replace({ pathname: router.pathname }, undefined, {
-                  shallow: true,
+                startTransition(() => {
+                  router.replace({ pathname: router.pathname }, undefined, {
+                    shallow: true,
+                  });
                 });
               }}
               className="mt-4 underline underline-offset-4 hover:text-brand-black dark:hover:text-white transition-colors"
@@ -133,6 +145,7 @@ export default function Blog({ allPosts }) {
           </div>
         )}
       </Container>
+      </ViewTransition>
     </Layout>
   );
 }

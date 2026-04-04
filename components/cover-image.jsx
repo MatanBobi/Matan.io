@@ -2,10 +2,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { ViewTransition } from "react";
 
-export default function CoverImage({ title, src, slug, style }) {
+export default function CoverImage({ title, src, slug, vtName, style }) {
+  const name = vtName || (slug ? `post-image-${slug}` : undefined);
   const image = (
     <ViewTransition
-      name={slug ? `post-image-${slug}` : undefined}
+      name={name}
       share="morph"
       default="none"
     >

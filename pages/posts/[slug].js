@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { ViewTransition } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
@@ -47,6 +48,11 @@ export default function Post({ post, preview }) {
   return (
     <Layout>
       {/* <SideCircles /> */}
+      <ViewTransition
+        enter={{ 'nav-forward': 'nav-forward', 'nav-back': 'nav-back', default: 'none' }}
+        exit={{ 'nav-forward': 'nav-forward', 'nav-back': 'nav-back', default: 'none' }}
+        default="none"
+      >
       <Container className="max-w-4xl">
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
@@ -122,6 +128,7 @@ export default function Post({ post, preview }) {
           </>
         )}
       </Container>
+      </ViewTransition>
     </Layout>
   );
 }

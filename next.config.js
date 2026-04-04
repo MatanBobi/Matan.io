@@ -5,12 +5,12 @@ module.exports = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'media.giphy.com',
+        protocol: "https",
+        hostname: "media.giphy.com",
       },
       {
-        protocol: 'https',
-        hostname: 'pbs.twimg.com',
+        protocol: "https",
+        hostname: "pbs.twimg.com",
       },
     ],
   },
@@ -18,9 +18,9 @@ module.exports = {
     config.module.rules.push({
       test: /\.svg$/i,
       issuer: /\.[jt]sx?$/,
-      use: ['@svgr/webpack'],
-    })
+      use: ["@svgr/webpack"],
+    });
 
-    return config
+    return config;
   },
 };

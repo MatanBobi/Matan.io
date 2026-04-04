@@ -1,17 +1,20 @@
 import Link from "next/link";
+import { ViewTransition } from "react";
 import Container from "../components/container";
 import MoreStories from "../components/more-stories";
 import Intro from "../components/intro";
 import Layout from "../components/layout";
 import { getNPostsFromStart } from "../lib/api";
 import AboutMe from "../components/AboutMe";
-import { useInView } from "../hooks/useInView";
-
 export default function Index({ allPosts }) {
   const morePosts = allPosts;
-  const [blogRef, blogInView] = useInView({ threshold: 0.1 });
   return (
     <Layout>
+      <ViewTransition
+        enter={{ 'nav-forward': 'nav-forward', 'nav-back': 'nav-back', default: 'none' }}
+        exit={{ 'nav-forward': 'nav-forward', 'nav-back': 'nav-back', default: 'none' }}
+        default="none"
+      >
       <Container className="relative">
         <AboutMe />
         {/* <SideCircles /> */}
@@ -21,13 +24,7 @@ export default function Index({ allPosts }) {
         {morePosts.length > 0 && (
           <section aria-labelledby="latest-posts-title">
             <div
-              ref={blogRef}
               className="flex items-center justify-between mb-8"
-              style={{
-                opacity: blogInView ? 1 : 0,
-                transform: blogInView ? "translateY(0)" : "translateY(16px)",
-                transition: "opacity 0.5s ease-out, transform 0.5s ease-out",
-              }}
             >
               <h2
                 id="latest-posts-title"
@@ -49,6 +46,7 @@ export default function Index({ allPosts }) {
           </section>
         )}
       </Container>
+      </ViewTransition>
     </Layout>
   );
 }
